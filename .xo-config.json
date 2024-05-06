@@ -1,0 +1,22 @@
+{
+    "prettier": true,
+    "semi": true,
+    "space": 4,
+    "envs": [
+        "node",
+        "es2021"
+    ],
+    "rules": {
+        "unicorn/better-regex": "off",
+        "unicorn/filename-case": "off",
+        "unicorn/prefer-string-replace-all": "off",
+        "@typescript-eslint/consistent-type-definitions": "off",
+        "import/extensions": [
+            "error",
+            "ignorePackages",
+            {
+                "ts": "never"
+            }
+        ]
+    }
+}
