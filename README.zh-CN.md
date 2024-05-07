@@ -62,15 +62,17 @@ translate(text, options)
     .catch(console.error);
 ```
 
-| 参数             | 类型                 | 可选 | 默认值      | 描述                                      |
-|----------------|--------------------|----|----------|-----------------------------------------|
-| `text`         | `string`           | 否  | -        | 源文本、短语或单词。                              |
-| `options`      | `TranslateOptions` | -  | -        | 翻译选项。                                   |
-| `options.from` | `LanguageCode`     | 是  | `'auto'` | 要从中翻译的语言名称/ISO 639-1代码。如果未指定，则会自动检测源语言。 |
-| `options.to`   | `LanguageCode`     | 是  | `'auto'` | 要翻译到的语言名称/ISO 639-1代码。如果未指定，则会翻译为英语。    |
-| `options.raw`  | `boolean`          | 是  | `false`  | 如果为 `true`，将返回从谷歌翻译 API 接收到的原始输出。       |
+| 参数                | 类型                 | 可选  | 默认值      | 描述                                      |
+|-------------------|--------------------|-----|----------|-----------------------------------------|
+| `text`            | `string`           | 否   | -        | 源文本、短语或单词。                              |
+| `options`         | `TranslateOptions` | -   | -        | 翻译选项。                                   |
+| `options.from`    | `LanguageCode`     | 是   | `'auto'` | 要从中翻译的语言名称/ISO 639-1代码。如果未指定，则会自动检测源语言。 |
+| `options.to`      | `LanguageCode`     | 是   | `'auto'` | 要翻译到的语言名称/ISO 639-1代码。如果未指定，则会翻译为英语。    |
+| `options.raw`     | `boolean`          | 是   | `false`  | 如果为 `true`，将返回从谷歌翻译 API 接收到的原始输出。       |
+| `options.timeout` | `number`           | Yes | `30_000` | 翻译请求的超时持续时间（以毫秒为单位）。                    |
+| `options.retry`   | `number`           | Yes | `0`      | 如果失败，请重试翻译请求。                           |
 
-#### Returns: `Promise<TranslationOption>`
+#### 返回: `Promise<TranslationOption>`
 
 **Response Object:**
 
@@ -93,7 +95,7 @@ translate(text, options)
 | `to.text.phonetics`        | `string`                                       | 译文的音标。                                           |
 | `to.text.value`            | `string`                                       | 译文。                                              |
 | `to.polysemy`              | `Array<{ label: string; children: string[] }>` | 译文的多义信息。                                         |
-| `raw`                      | `String`                                       | 翻译请求的原始响应主体。仅在请求选项中的 `options.raw` 为 `true` 时返回。 |
+| `raw`                      | `string`                                       | 翻译请求的原始响应主体。仅在请求选项中的 `options.raw` 为 `true` 时返回。 |
 
 ---
 
@@ -111,7 +113,7 @@ iso6391X.getName(code);
 |--------|----------|----|-----|--------------------------------|
 | `code` | `string` | 否  | -   | ISO-639-1 语言代码或 Google 翻译语言代码。 |
 
-#### Returns: `string`
+#### 返回: `string`
 
 ---
 
@@ -121,7 +123,7 @@ iso6391X.getName(code);
 iso6391X.getAllNames();
 ```
 
-#### Returns: `string[]`
+#### 返回: `string[]`
 
 ---
 
@@ -135,7 +137,7 @@ iso6391X.getNativeName(code);
 |--------|----------|----|-----|--------------------------------|
 | `code` | `string` | 否  | -   | ISO-639-1 语言代码或 Google 翻译语言代码。 |
 
-#### Returns: `string`
+#### 返回: `string`
 
 ---
 
@@ -145,7 +147,7 @@ iso6391X.getNativeName(code);
 iso6391X.getAllNativeNames();
 ```
 
-#### Returns: `string[]`
+#### 返回: `string[]`
 
 ---
 
@@ -159,7 +161,7 @@ iso6391X.getCode(name);
 |--------|----------|----|-----|--------------------------------|
 | `code` | `string` | 否  | -   | ISO-639-1 语言名称或 Google 翻译语言名称。 |
 
-#### Returns: `LanguageCode`
+#### 返回: `LanguageCode`
 
 ---
 
@@ -169,7 +171,7 @@ iso6391X.getCode(name);
 iso6391X.getAllCodes();
 ```
 
-#### Returns: `LanguageCode[]`
+#### 返回: `LanguageCode[]`
 
 ---
 
@@ -183,7 +185,7 @@ iso6391X.getLanguages(codes);
 |--------|----------|----|-----|------------------------------------|
 | `code` | `string` | 否  | -   | ISO-639-1 语言代码元组或 Google 翻译语言代码元组。 |
 
-#### Returns: `LanguageOption[]`
+#### 返回: `LanguageOption[]`
 
 ---
 
@@ -193,7 +195,7 @@ iso6391X.getLanguages(codes);
 iso6391X.getAllDetections();
 ```
 
-#### Returns: `LanguageCode[]`
+#### 返回: `LanguageCode[]`
 
 ## 🪄 例子
 

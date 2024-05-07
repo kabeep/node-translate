@@ -65,13 +65,15 @@ translate(text, options)
     .catch(console.error);
 ```
 
-| Parameter      | Type               | Optional | Default  | Description                                                                                                    |
-|----------------|--------------------|----------|----------|----------------------------------------------------------------------------------------------------------------|
-| `text`         | `string`           | No       | -        | Source text, phrase or word.                                                                                   |
-| `options`      | `TranslateOptions` | -        | -        | The options for translating.                                                                                   |
-| `options.from` | `LanguageCode`     | Yes      | `'auto'` | The language name/ISO 639-1 code to translate from. If none is given, it will auto-detect the source language. |
-| `options.to`   | `LanguageCode`     | Yes      | `'auto'` | The language name/ISO 639-1 code to translate to. If none is given, it will translate to English.              |
-| `options.raw`  | `boolean`          | Yes      | `false`  | If `true`, it will return the raw output that was received from Google Translation Api.                        |
+| Parameter         | Type               | Optional | Default  | Description                                                                                                    |
+|-------------------|--------------------|----------|----------|----------------------------------------------------------------------------------------------------------------|
+| `text`            | `string`           | No       | -        | Source text, phrase or word.                                                                                   |
+| `options`         | `TranslateOptions` | -        | -        | The options for translating.                                                                                   |
+| `options.from`    | `LanguageCode`     | Yes      | `'auto'` | The language name/ISO 639-1 code to translate from. If none is given, it will auto-detect the source language. |
+| `options.to`      | `LanguageCode`     | Yes      | `'auto'` | The language name/ISO 639-1 code to translate to. If none is given, it will translate to English.              |
+| `options.raw`     | `boolean`          | Yes      | `false`  | If `true`, it will return the raw output that was received from Google Translation Api.                        |
+| `options.timeout` | `number`           | Yes      | `30_000` | Timeout duration for the translation request in milliseconds.                                                  |
+| `options.retry`   | `number`           | Yes      | `0`      | Retry attempts for the translation request in case of failure.                                                 |
 
 #### Returns: `Promise<TranslationOption>`
 
@@ -90,13 +92,13 @@ translate(text, options)
 | `from.text.phonetics`      | `string`                                       | Phonetic transcription of the source text.                                                                           |
 | `from.text.didYouMean`     | `boolean`                                      | Indicates whether a suggestion for the source text.                                                                  |
 | `from.synonyms`            | `string[]`                                     | Synonyms of the source word.                                                                                         |
-| `from.sentences`           | `string[]`                                     | Example sentence of the source word                                                                                  |
+| `from.sentences`           | `string[]`                                     | Example sentence of the source word.                                                                                 |
 | `to`                       | `Record`                                       | -                                                                                                                    |
-| `to.text`                  | `Record`                                       | -                                                                                                                    |                                                                                                                
+| `to.text`                  | `Record`                                       | -                                                                                                                    |
 | `to.text.phonetics`        | `string`                                       | Phonetic transcription of the translated text.                                                                       |
 | `to.text.value`            | `string`                                       | Translated text.                                                                                                     |
-| `to.polysemy`              | `Array<{ label: string; children: string[] }>` | Polysemy information for the translated text                                                                         |
-| `raw`                      | `String`                                       | The raw response body from the translation request. Only returned if `options.raw` is `true` in the request options. |
+| `to.polysemy`              | `Array<{ label: string; children: string[] }>` | Polysemy information for the translated text.                                                                        |
+| `raw`                      | `string`                                       | The raw response body from the translation request. Only returned if `options.raw` is `true` in the request options. |
 
 ---
 
