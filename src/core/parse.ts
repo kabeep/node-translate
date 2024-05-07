@@ -1,14 +1,14 @@
 import { mutable } from '../helper/index.js';
 import type { ResponseBody } from '../shared/index.js';
 
-interface TranslationOptionFromLanguage {
+export interface TranslationOptionFromLanguage {
     /** Indicates whether there is a language suggestion */
     didYouMean: boolean;
     /** The ISO code of the detected language */
     iso: string;
 }
 
-interface TranslationOptionFromText {
+export interface TranslationOptionFromText {
     /** Indicates whether there was an autocorrection */
     autoCorrected: boolean;
     /** Source text */
@@ -19,7 +19,7 @@ interface TranslationOptionFromText {
     didYouMean: boolean;
 }
 
-interface TranslationOptionFrom {
+export interface TranslationOptionFrom {
     language: TranslationOptionFromLanguage;
     text: TranslationOptionFromText;
     /** Synonyms of the source word */
@@ -28,14 +28,14 @@ interface TranslationOptionFrom {
     sentences: string[];
 }
 
-interface TranslationOptionToText {
+export interface TranslationOptionToText {
     /** Phonetic transcription of the translated text */
     phonetics: string;
     /** Translated text */
     value: string;
 }
 
-interface TranslationOptionTo {
+export interface TranslationOptionTo {
     text: TranslationOptionToText;
     /** Polysemy information for the translated text */
     polysemy: Array<{ label: string; children: string[] }>;
