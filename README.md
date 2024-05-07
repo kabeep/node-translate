@@ -79,6 +79,7 @@ translate(text, options)
 
 | Key                        | Type                                           | Description                                                                                                          |
 |----------------------------|------------------------------------------------|----------------------------------------------------------------------------------------------------------------------|
+| `text`                     | `string`                                       | Translation text.                                                                                                    |
 | `from`                     | `Record`                                       | -                                                                                                                    |
 | `from.language`            | `Record`                                       | -                                                                                                                    |
 | `from.language.didYouMean` | `boolean`                                      | Indicates whether there is a language suggestion.                                                                    |
@@ -224,7 +225,7 @@ import translate from '@kabeep/node-translate';
 // Use `auto` or leave the `to` parameter empty to detect language by os (`en` for example)
 translate('例子').then(res => {
     // => example
-    console.log(res.to.text.value);
+    console.log(res.text);
 });
 ```
 

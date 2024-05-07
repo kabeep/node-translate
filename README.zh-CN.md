@@ -76,6 +76,7 @@ translate(text, options)
 
 | 键                          | 类型                                             | 描述                                               |
 |----------------------------|------------------------------------------------|--------------------------------------------------|
+| `text`                     | `string`                                       | 译文。                                              |
 | `from`                     | `Record`                                       | -                                                |
 | `from.language`            | `Record`                                       | -                                                |
 | `from.language.didYouMean` | `boolean`                                      | 表示是否有语言建议。                                       |
@@ -206,7 +207,7 @@ import translate from '@kabeep/node-translate';
 // 简单示例
 translate('例子', { to: 'en' }).then(res => {
     // => example
-    console.log(res.to.text.value);
+    console.log(res.text);
 });
 ```
 

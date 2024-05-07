@@ -42,6 +42,8 @@ interface TranslationOptionTo {
 }
 
 export interface TranslationOption {
+    /** Translation text */
+    text: string;
     from: TranslationOptionFrom;
     to: TranslationOptionTo;
     /** The raw response body from the translation request */
@@ -56,6 +58,8 @@ export interface TranslationOption {
 function parse(data: ResponseBody) {
     try {
         const result = mutable<TranslationOption>({
+            text: '',
+
             from: {
                 language: {
                     didYouMean: false,
@@ -88,6 +92,9 @@ function parse(data: ResponseBody) {
             Boolean(object[0]) && (result.to.text.value += object[0]);
             Boolean(object[1]) && (result.from.text.value += object[1]);
         }
+
+        // Parse translation text
+        result.text = data[0][0][0];
 
         // Parse phonetics transcription of the source text
         result.from.text.phonetics = data[0][1]?.[3] ?? '';
