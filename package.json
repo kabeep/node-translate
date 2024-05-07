@@ -1,6 +1,6 @@
 {
     "name": "@kabeep/node-translate",
-    "version": "0.0.1",
+    "version": "1.0.0",
     "type": "module",
     "description": "A powerful, secure and feature-rich api via Google Translation.",
     "main": "./dist/index.js",
