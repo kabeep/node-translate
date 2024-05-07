@@ -1,59 +1,59 @@
 {
-  "name": "node-translate",
-  "version": "0.0.1",
-  "type": "module",
-  "description": "Exception is a custom error library for Node.js that provides a more flexible and customizable way of handling errors.",
-  "main": "./dist/index.js",
-  "types": "./dist/index.d.ts",
-  "files": [
-    "dist"
-  ],
-  "scripts": {
-    "docs": "jsdoc -c jsdoc.config.json",
-    "lint": "xo src/**/*.ts --fix",
-    "pretest": "npm run lint",
-    "test": "vitest run",
-    "coverage": "vitest run --coverage",
-    "watch": "tsup --watch",
-    "watch:test": "vitest",
-    "build": "tsup --dts --treeshake smallest",
-    "prepare": "husky"
-  },
-  "devDependencies": {
-    "@types/lodash.has": "^4.5.9",
-    "@types/node": "^20.12.7",
-    "@vitest/coverage-istanbul": "^1.5.1",
-    "docdash": "^2.0.2",
-    "husky": "^9.0.11",
-    "jsdoc": "^4.0.2",
-    "ts-node": "^10.9.2",
-    "tsup": "^8.0.2",
-    "typescript": "^5.4.5",
-    "vitest": "^1.5.1",
-    "xo": "^0.58.0"
-  },
-  "dependencies": {
-    "got": "^13.0.0",
-    "iso-639-1": "^3.1.2",
-    "lodash.has": "^4.5.2",
-    "os-locale": "^6.0.2"
-  },
-  "author": "Zhang Zixin (kabeep)",
-  "homepage": "https://github.com/kabeep/node-translate#readme",
-  "repository": "git@github.com:kabeep/node-translate.git",
-  "bugs": "https://github.com/kabeep/node-translate/issue",
-  "keywords": [
-    "nodejs",
-    "error",
-    "pretty error",
-    "beauty error",
-    "custom error",
-    "unexpected",
-    "exception",
-    "expectation"
-  ],
-  "engines": {
-    "node": ">=16"
-  },
-  "license": "MIT"
+    "name": "@kabeep/node-translate",
+    "version": "0.0.1",
+    "type": "module",
+    "description": "Exception is a custom error library for Node.js that provides a more flexible and customizable way of handling errors.",
+    "main": "./dist/index.js",
+    "types": "./dist/index.d.ts",
+    "files": [
+        "dist"
+    ],
+    "scripts": {
+        "docs": "jsdoc -c jsdoc.config.json",
+        "lint": "xo src/**/*.ts --fix",
+        "pretest": "npm run lint",
+        "test": "vitest run",
+        "coverage": "vitest run --coverage",
+        "watch": "tsup --watch",
+        "watch:test": "vitest",
+        "build": "tsup --dts --treeshake smallest",
+        "prepare": "husky"
+    },
+    "devDependencies": {
+        "@types/lodash.has": "^4.5.9",
+        "@types/node": "^20.12.7",
+        "@vitest/coverage-istanbul": "^1.5.1",
+        "docdash": "^2.0.2",
+        "husky": "^9.0.11",
+        "jsdoc": "^4.0.2",
+        "ts-node": "^10.9.2",
+        "tsup": "^8.0.2",
+        "typescript": "^5.4.5",
+        "vitest": "^1.5.1",
+        "xo": "^0.58.0"
+    },
+    "dependencies": {
+        "got": "^13.0.0",
+        "iso-639-1": "^3.1.2",
+        "lodash.has": "^4.5.2",
+        "os-locale": "^6.0.2"
+    },
+    "author": "Zhang Zixin (kabeep)",
+    "homepage": "https://github.com/kabeep/node-translate#readme",
+    "repository": "git@github.com:kabeep/node-translate.git",
+    "bugs": "https://github.com/kabeep/node-translate/issue",
+    "keywords": [
+        "nodejs",
+        "error",
+        "pretty error",
+        "beauty error",
+        "custom error",
+        "unexpected",
+        "exception",
+        "expectation"
+    ],
+    "engines": {
+        "node": ">=16"
+    },
+    "license": "MIT"
 }
