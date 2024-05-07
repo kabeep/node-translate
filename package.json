@@ -2,7 +2,7 @@
     "name": "@kabeep/node-translate",
     "version": "0.0.1",
     "type": "module",
-    "description": "Exception is a custom error library for Node.js that provides a more flexible and customizable way of handling errors.",
+    "description": "A powerful, secure and feature-rich api via Google Translation.",
     "main": "./dist/index.js",
     "types": "./dist/index.d.ts",
     "files": [
@@ -44,13 +44,12 @@
     "bugs": "https://github.com/kabeep/node-translate/issue",
     "keywords": [
         "nodejs",
-        "error",
-        "pretty error",
-        "beauty error",
-        "custom error",
-        "unexpected",
-        "exception",
-        "expectation"
+        "translate",
+        "translate api",
+        "google translate",
+        "google translate api",
+        "node translate",
+        "node translate api"
     ],
     "engines": {
         "node": ">=16"

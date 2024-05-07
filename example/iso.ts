@@ -1,25 +1,25 @@
 import { LanguageCode } from 'iso-639-1';
 import { iso6391X, LanguageOption } from '../src/index.js';
 
-// en
+// => en
 console.log(iso6391X.getCode('english') as string);
 
-// ['aa', 'ab', ... 199 more items]
+// => ['aa', 'ab', ... 199 more items]
 console.log(iso6391X.getAllCodes() as LanguageCode[]);
 
-// English
+// => English
 console.log(iso6391X.getName('en') as string);
 
-// ['Afar', 'Abkhaz', ... 199 more items]
+// => ['Afar', 'Abkhaz', ... 199 more items]
 console.log(iso6391X.getAllNames() as string[]);
 
-// 中文
+// => 中文
 console.log(iso6391X.getNativeName('zh') as string);
 
-// ['Afaraf', 'аҧсуа бызшәа', ... 199 more items]
+// => ['Afaraf', 'аҧсуа бызшәа', ... 199 more items]
 console.log(iso6391X.getAllNativeNames() as string[]);
 
-// [
+// => [
 //   { code: 'en', name: 'English', nativeName: 'English' },
 //   { code: 'zh', name: 'Chinese', nativeName: '中文' },
 //   { code: 'fr', name: 'French', nativeName: 'Français' },
@@ -31,13 +31,13 @@ console.log(iso6391X.getAllNativeNames() as string[]);
 // ]
 console.log(iso6391X.getAllDetections() as LanguageOption[]);
 
-// [
+// => [
 //   { code: 'en', name: 'English', nativeName: 'English' },
 //   { code: 'zh', name: 'Chinese', nativeName: '中文' },
 // ]
 console.log(iso6391X.getLanguages(['en', 'zh']) as LanguageOption[]);
 
-// true
+// => true
 console.log(iso6391X.validate('en') as boolean);
-// false
+// => false
 console.log(iso6391X.validate('english') as boolean);

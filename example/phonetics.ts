@@ -2,8 +2,8 @@ import translate from '../src/index.js';
 
 // Output phonetic transcription of the source text and the translated text
 translate('例子', { to: 'ja' }).then(res => {
-    // Lìzi
+    // => Lìzi
     console.log(res.from.text.phonetics);
-    // Rei
+    // => Rei
     console.log(res.to.text.phonetics);
 });
