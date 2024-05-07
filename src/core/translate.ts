@@ -7,7 +7,7 @@ import validate from './validate.js';
  * Represents options for translating text.
  */
 export interface TranslateOptions extends Partial<Omit<RequestOptions, 'text'>> {
-    // Placeholder
+    raw?: boolean;
 }
 
 /**
@@ -16,7 +16,10 @@ export interface TranslateOptions extends Partial<Omit<RequestOptions, 'text'>> 
  * @param {TranslateOptions} options - Additional options for the translation.
  * @returns {Promise<any>} - A promise that resolves with the translated text.
  */
-async function translate(text: string, { from = 'auto', to = 'auto', timeout, retry }: TranslateOptions = {}) {
+async function translate(
+    text: string,
+    { from = 'auto', to = 'auto', timeout, retry, raw: rawEnabled = false }: TranslateOptions = {},
+) {
     from ??= 'auto';
     to = !to || to === 'auto' ? getLocale() : to;
 
@@ -30,7 +33,13 @@ async function translate(text: string, { from = 'auto', to = 'auto', timeout, re
 
     const response = await request({ from, to, text, timeout, retry });
 
-    return parse(response);
+    const data = parse(response);
+
+    if (!rawEnabled) {
+        delete data.raw;
+    }
+
+    return data;
 }
 
 export default translate;
