@@ -16,11 +16,11 @@ export type LanguageCode = Iso6391LanguageCode | AdditionalCode;
 /**
  * Represents an option for a language, including its code, name, and native name.
  */
-export type LanguageOption = {
+export interface LanguageOption {
     code: LanguageCode;
     name: string;
     nativeName: string;
-};
+}
 
 /**
  * Represents a utility class for working with ISO 639-1 language codes and additional custom codes.

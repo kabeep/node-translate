@@ -11,7 +11,10 @@
         "unicorn/filename-case": "off",
         "unicorn/prefer-string-replace-all": "off",
         "@typescript-eslint/no-unused-expressions": "off",
-        "@typescript-eslint/consistent-type-definitions": "off",
+        "@typescript-eslint/consistent-type-definitions": [
+            "error",
+            "interface"
+        ],
         "import/extensions": [
             "error",
             "ignorePackages",
