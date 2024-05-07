@@ -1,5 +1,5 @@
 import querystring, { type ParsedUrlQueryInput } from 'node:querystring';
-import got, { type OptionsInit, type Response } from 'got';
+import got, { type OptionsInit, type RequestError, type Response } from 'got';
 import { mutable } from '../helper/index.js';
 import type { RequestParameters, ResponseBody, ResponseErrorCodes } from '../shared/index.js';
 
@@ -49,7 +49,7 @@ async function request({
     });
 
     const getUrl = (url: string, data: RequestParameters) =>
-        `${baseUrl}?${querystring.stringify(data as any as ParsedUrlQueryInput)}`;
+        `${baseUrl}?${querystring.stringify(data as ParsedUrlQueryInput)}`;
 
     // If request URL is greater than 2048 characters, use POST method.
     const isOverflow = getUrl(baseUrl, data).length > 2048;
@@ -60,7 +60,7 @@ async function request({
     const requestOptions = mutable<OptionsInit>({
         method: 'get', // HTTP request method
         headers: {
-            'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8', // Request header content type
+            'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8',
         },
         timeout: { request: timeout }, // Request timeout configuration
         retry: { limit: retry }, // Request retry configuration
@@ -78,8 +78,8 @@ async function request({
     let response: Response<ResponseBody>;
     try {
         response = (await got(url, requestOptions)) as Response<ResponseBody>;
-    } catch (error: any) {
-        throw new Error(error.code as ResponseErrorCodes);
+    } catch (error: unknown) {
+        throw new Error((error as RequestError).code as ResponseErrorCodes);
     }
 
     return response.body;

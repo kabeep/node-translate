@@ -33,7 +33,7 @@ class Iso6391X {
      * @param {string} code - The language code.
      * @returns {string} - The name of the language.
      */
-    getName(code: string): string {
+    getName(code: string) {
         return additionalCodes[code as AdditionalCode]?.name ?? iso6391.getName(code);
     }
 
@@ -41,7 +41,7 @@ class Iso6391X {
      * Gets all language names, including ISO 639-1 and additional custom codes.
      * @returns {string[]} - An array of language names.
      */
-    getAllNames(): string[] {
+    getAllNames() {
         return [...iso6391.getAllNames(), ...Object.values(additionalCodes).map((item) => item.name)];
     }
 
@@ -50,7 +50,7 @@ class Iso6391X {
      * @param {string} code - The language code.
      * @returns {string} - The native name of the language.
      */
-    getNativeName(code: string): string {
+    getNativeName(code: string) {
         return additionalCodes[code as AdditionalCode]?.nativeName ?? iso6391.getNativeName(code);
     }
 
@@ -58,7 +58,7 @@ class Iso6391X {
      * Gets all native language names, including ISO 639-1 and additional custom codes.
      * @returns {string[]} - An array of native language names.
      */
-    getAllNativeNames(): string[] {
+    getAllNativeNames() {
         return [...iso6391.getAllNativeNames(), ...Object.values(additionalCodes).map((option) => option.nativeName)];
     }
 
@@ -67,7 +67,7 @@ class Iso6391X {
      * @param {string} name - The language name.
      * @returns {LanguageCode
      */
-    getCode(name: string): LanguageCode {
+    getCode(name: string) {
         const additionalNames = Object.values(additionalCodes).map((option) => option.name);
         const matchIndex = additionalNames.indexOf(name as AdditionalName);
 
@@ -78,17 +78,8 @@ class Iso6391X {
      * Gets all language codes, including ISO 639-1 and additional custom codes.
      * @returns {LanguageCode[]} - An array of language codes.
      */
-    getAllCodes(): LanguageCode[] {
+    getAllCodes() {
         return [...iso6391.getAllCodes(), ...Object.keys(additionalCodes)] as LanguageCode[];
-    }
-
-    /**
-     * Validates whether the given code is a valid language code.
-     * @param {string} code - The language code to validate.
-     * @returns {boolean} - True if the code is valid, false otherwise.
-     */
-    validate(code: string): boolean {
-        return iso6391.validate(code) || has(additionalCodes, code);
     }
 
     /**
@@ -96,7 +87,7 @@ class Iso6391X {
      * @param {string[]} codes - An array of language codes.
      * @returns {LanguageOption[]} - An array of language options.
      */
-    getLanguages(codes: string[]): LanguageOption[] {
+    getLanguages(codes: string[]) {
         const [googleLanguages, isoCodes] = [[], []] as [LanguageOption[], string[]];
 
         for (const code of codes) {
@@ -120,6 +111,15 @@ class Iso6391X {
      */
     getAllDetections() {
         return this.getLanguages(adaptiveCodes);
+    }
+
+    /**
+     * Validates whether the given code is a valid language code.
+     * @param {string} code - The language code to validate.
+     * @returns {boolean} - True if the code is valid, false otherwise.
+     */
+    validate(code: string) {
+        return iso6391.validate(code) || has(additionalCodes, code);
     }
 }
 

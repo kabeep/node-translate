@@ -2,7 +2,7 @@ import { mutable } from '../helper/index.js';
 import type { ResponseBody } from '../shared/index.js';
 
 interface TranslationOptionFromLanguage {
-    /** Indicates whether there is a language suggestio. */
+    /** Indicates whether there is a language suggestion */
     didYouMean: boolean;
     /** The ISO code of the detected language */
     iso: string;
@@ -44,8 +44,8 @@ interface TranslationOptionTo {
 export interface TranslationOption {
     from: TranslationOptionFrom;
     to: TranslationOptionTo;
-    /** The raw response body from the translation request. */
-    raw: ResponseBody;
+    /** The raw response body from the translation request */
+    raw?: ResponseBody;
 }
 
 /**
