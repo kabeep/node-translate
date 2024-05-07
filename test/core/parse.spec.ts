@@ -49,7 +49,7 @@ test('parse - should parse the sentences for response body', async () => {
     expect(result.from.sentences).toStrictEqual(expected);
 });
 
-test('parse - should return error if parameter is empty', async () => {
+test('parse - should return error object if parameter is exceptional', async () => {
     try {
         parse(undefined);
     } catch (err) {
