@@ -14,11 +14,11 @@ const additionalCodes = {
         nativeName: 'Cebuan',
     },
     'zh-cn': {
-        name: 'Chinese (Simplified)',
+        name: 'Chinese Simplified',
         nativeName: '简体中文',
     },
     'zh-tw': {
-        name: 'Chinese (Traditional)',
+        name: 'Chinese Traditional',
         nativeName: '簡體中文',
     },
     doi: {

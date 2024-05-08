@@ -213,6 +213,20 @@ translate('例子', { to: 'en' }).then(res => {
 });
 ```
 
+#### 使用语言名和大小写修正
+
+[View Case](example/language.ts)
+
+```javascript
+import translate from '@kabeep/node-translate';
+
+// Language name and capitalized correction
+translate('例子', { to: 'ENGlish' }).then(res => {
+    // => example
+    console.log(res.text);
+});
+```
+
 #### 自适应翻译
 
 [查看用例](example/detection.ts)

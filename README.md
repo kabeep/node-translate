@@ -65,15 +65,15 @@ translate(text, options)
     .catch(console.error);
 ```
 
-| Parameter         | Type               | Optional | Default  | Description                                                                                                    |
-|-------------------|--------------------|----------|----------|----------------------------------------------------------------------------------------------------------------|
-| `text`            | `string`           | No       | -        | Source text, phrase or word.                                                                                   |
-| `options`         | `TranslateOptions` | -        | -        | The options for translating.                                                                                   |
-| `options.from`    | `LanguageCode`     | Yes      | `'auto'` | The language name/ISO 639-1 code to translate from. If none is given, it will auto-detect the source language. |
-| `options.to`      | `LanguageCode`     | Yes      | `'auto'` | The language name/ISO 639-1 code to translate to. If none is given, it will translate to English.              |
-| `options.raw`     | `boolean`          | Yes      | `false`  | If `true`, it will return the raw output that was received from Google Translation Api.                        |
-| `options.timeout` | `number`           | Yes      | `30_000` | Timeout duration for the translation request in milliseconds.                                                  |
-| `options.retry`   | `number`           | Yes      | `0`      | Retry attempts for the translation request in case of failure.                                                 |
+| Parameter         | Type                               | Optional | Default  | Description                                                                                                    |
+|-------------------|------------------------------------|----------|----------|----------------------------------------------------------------------------------------------------------------|
+| `text`            | `string`                           | No       | -        | Source text, phrase or word.                                                                                   |
+| `options`         | `TranslateOptions`                 | -        | -        | The options for translating.                                                                                   |
+| `options.from`    | `LanguageCode`, `auto` or `string` | Yes      | `'auto'` | The language name/ISO 639-1 code to translate from. If none is given, it will auto-detect the source language. |
+| `options.to`      | `LanguageCode`, `auto` or `string` | Yes      | `'auto'` | The language name/ISO 639-1 code to translate to. If none is given, it will translate to English.              |
+| `options.raw`     | `boolean`                          | Yes      | `false`  | If `true`, it will return the raw output that was received from Google Translation Api.                        |
+| `options.timeout` | `number`                           | Yes      | `30_000` | Timeout duration for the translation request in milliseconds.                                                  |
+| `options.retry`   | `number`                           | Yes      | `0`      | Retry attempts for the translation request in case of failure.                                                 |
 
 #### Returns: `Promise<TranslationOption>`
 
@@ -213,6 +213,20 @@ import translate from '@kabeep/node-translate';
 translate('例子', { to: 'en' }).then(res => {
     // => example
     console.log(res.to.text.value);
+});
+```
+
+#### Using language name and capitalized correction
+
+[View Case](example/language.ts)
+
+```javascript
+import translate from '@kabeep/node-translate';
+
+// Language name and capitalized correction
+translate('例子', { to: 'ENGlish' }).then(res => {
+    // => example
+    console.log(res.text);
 });
 ```
 

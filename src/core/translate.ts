@@ -1,7 +1,6 @@
 import { request, type RequestOptions } from '../api/index.js';
-import { getLocale } from '../helper/index.js';
+import { getCode } from '../helper/index.js';
 import parse from './parse.js';
-import validate from './validate.js';
 
 /**
  * Represents options for translating text.
@@ -20,16 +19,9 @@ async function translate(
     text: string,
     { from = 'auto', to = 'auto', timeout, retry, raw: rawEnabled = false }: TranslateOptions = {},
 ) {
-    from ??= 'auto';
-    to = !to || to === 'auto' ? getLocale() : to;
-
+    from = getCode(from);
+    to = getCode(to, true);
     text = String(text);
-
-    // Check if a language is in supported; if not, throw an error object.
-    const isValidated = validate(to) && validate(from);
-    if (!isValidated) {
-        throw new Error('EVALIDATION');
-    }
 
     const response = await request({ from, to, text, timeout, retry });
 
