@@ -370,7 +370,7 @@ import translate from '@kabeep/node-translate';
 
 // 在翻译请求失败时进行重试尝试（此时最多三次请求）
 translate('例子', { to: 'en', retry: 2, timeout: 100 }).catch((err) => {
-    // => ETIMEDOUT - 达到了其中一个超时限制
+    // => ETIMEDOUT - 达到了超时限制
     // => ECONNRESET - 连接被强制关闭
     // => EADDRINUSE - 无法绑定到任何空闲端口
     // => ECONNREFUSED - 服务器拒绝了连接
@@ -378,8 +378,8 @@ translate('例子', { to: 'en', retry: 2, timeout: 100 }).catch((err) => {
     // => ENOTFOUND - 无法将主机名解析为 IP 地址
     // => ENETUNREACH - 没有网络连接
     // => EAI_AGAIN - DNS 查询超时
-    // => EPARSE - 解析翻译失败
-    // => EVALIDATION - ISO 代码验证失败
+    // => EPARSE - 意料外的响应数据
+    // => EVALIDATION - 非法语言代码
     console.log(err.message);
 });
 ```
@@ -389,8 +389,7 @@ translate('例子', { to: 'en', retry: 2, timeout: 100 }).catch((err) => {
 [查看用例](example/iso.ts)
 
 ```javascript
-import { LanguageCode } from 'iso-639-1';
-import { iso6391X, LanguageOption } from '../src/index.js';
+import { iso6391X, LanguageCode, LanguageOption } from '@kabeep/node-translate';
 
 // => en
 console.log(iso6391X.getCode('english'));

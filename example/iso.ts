@@ -1,5 +1,4 @@
-import { LanguageCode } from 'iso-639-1';
-import { iso6391X, LanguageOption } from '../src/index.js';
+import { iso6391X, type LanguageCode, type LanguageOption } from '../src/index.js';
 
 // => en
 console.log(iso6391X.getCode('english') as string);

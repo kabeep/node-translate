@@ -373,7 +373,7 @@ import translate from '@kabeep/node-translate';
 
 // Retry attempts for the translation request in case of failure (with a maximum of three requests)
 translate('例子', { to: 'en', retry: 2, timeout: 100 }).catch((err) => {
-    // => ETIMEDOUT    - One of the timeout limits was reached
+    // => ETIMEDOUT    - The timeout limits was reached
     // => ECONNRESET   - The connection was forcibly closed
     // => EADDRINUSE   - Could not bind to any free port
     // => ECONNREFUSED - The connection was refused by the server
@@ -381,8 +381,8 @@ translate('例子', { to: 'en', retry: 2, timeout: 100 }).catch((err) => {
     // => ENOTFOUND    - Could not resolve the hostname to an IP address
     // => ENETUNREACH  - No internet connection
     // => EAI_AGAIN    - DNS lookup timed out
-    // => EPARSE       - Failure of parse translation
-    // => EVALIDATION  - Failure of iso code validation
+    // => EPARSE       - Unexpected API response data
+    // => EVALIDATION  - Illegal language code
     console.log(err.message);
 });
 ```
@@ -392,8 +392,7 @@ translate('例子', { to: 'en', retry: 2, timeout: 100 }).catch((err) => {
 [View Case](example/iso.ts)
 
 ```javascript
-import { LanguageCode } from 'iso-639-1';
-import { iso6391X, LanguageOption } from '../src/index.js';
+import { iso6391X, LanguageCode, LanguageOption } from '@kabeep/node-translate';
 
 // => en
 console.log(iso6391X.getCode('english'));
