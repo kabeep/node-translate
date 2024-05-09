@@ -34,7 +34,7 @@ class Iso6391X {
      * @returns {string} - The name of the language.
      */
     getName(code: string) {
-        return additionalCodes[code.toString() as AdditionalCode]?.name ?? iso6391.getName(code);
+        return additionalCodes[code.toLowerCase() as AdditionalCode]?.name ?? iso6391.getName(code);
     }
 
     /**
@@ -51,7 +51,7 @@ class Iso6391X {
      * @returns {string} - The native name of the language.
      */
     getNativeName(code: string) {
-        return additionalCodes[code.toString() as AdditionalCode]?.nativeName ?? iso6391.getNativeName(code);
+        return additionalCodes[code.toLowerCase() as AdditionalCode]?.nativeName ?? iso6391.getNativeName(code);
     }
 
     /**
@@ -93,7 +93,7 @@ class Iso6391X {
         for (const code of codes) {
             if (has(additionalCodes, code.toLowerCase())) {
                 googleLanguages.push({
-                    code: code as LanguageCode,
+                    code: code.toLowerCase() as LanguageCode,
                     ...(additionalCodes as Record<string, AdditionalCodeOption>)[code],
                 });
             } else {
