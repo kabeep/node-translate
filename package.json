@@ -21,7 +21,7 @@
     },
     "devDependencies": {
         "@types/lodash.has": "^4.5.9",
-        "@types/node": "^20.12.7",
+        "@types/node": "^22.2.0",
         "@vitest/coverage-istanbul": "^1.5.1",
         "docdash": "^2.0.2",
         "husky": "^9.0.11",
