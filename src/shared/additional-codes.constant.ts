@@ -19,7 +19,7 @@ const additionalCodes = {
     },
     'zh-tw': {
         name: 'Chinese Traditional',
-        nativeName: '簡體中文',
+        nativeName: '繁體中文',
     },
     doi: {
         name: 'Dogri',
