@@ -42,9 +42,9 @@ const example5 = '[[["例子","example",null,null,10],[null,null,"Lìzi","iɡˈz
 test('parse - should parse the sentences for response body', async () => {
     const result = parse(JSON.parse(example5));
     const expected = [
-        'it\'s a good <b>example</b> of how European action can produce results',
-        'it is vitally important that parents should set an <b>example</b>',
-        'she followed her brother\'s <b>example</b> and deserted her family',
+        'it\'s a good [example] of how European action can produce results',
+        'it is vitally important that parents should set an [example]',
+        'she followed her brother\'s [example] and deserted her family',
     ];
     expect(result.from.sentences).toStrictEqual(expected);
 });

@@ -142,7 +142,14 @@ function parse(data: ResponseBody) {
         // Parse example sentences of the source text
         if (data[13]?.[0]) {
             for (const object of data[13][0]) {
-                object[0] && result.from.sentences.push(object[0]);
+                if (!object[0]) continue;
+
+                let string_ = object[0];
+
+                string_ = string_.replace(/<b>/g, '[');
+                string_ = string_.replace(/<\/b>/g, ']');
+
+                result.from.sentences.push(string_);
             }
         }
 
