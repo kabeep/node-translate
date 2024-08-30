@@ -65,15 +65,15 @@ translate(text, options)
     .catch(console.error);
 ```
 
-| Parameter         | Type                               | Optional | Default  | Description                                                                                                    |
-|-------------------|------------------------------------|----------|----------|----------------------------------------------------------------------------------------------------------------|
-| `text`            | `string`                           | No       | -        | Source text, phrase or word.                                                                                   |
-| `options`         | `TranslateOptions`                 | -        | -        | The options for translating.                                                                                   |
-| `options.from`    | `LanguageCode`, `auto` or `string` | Yes      | `'auto'` | The language name/ISO 639-1 code to translate from. If none is given, it will auto-detect the source language. |
-| `options.to`      | `LanguageCode`, `auto` or `string` | Yes      | `'auto'` | The language name/ISO 639-1 code to translate to. If none is given, it will translate to English.              |
-| `options.raw`     | `boolean`                          | Yes      | `false`  | If `true`, it will return the raw output that was received from Google Translation Api.                        |
-| `options.timeout` | `number`                           | Yes      | `30_000` | Timeout duration for the translation request in milliseconds.                                                  |
-| `options.retry`   | `number`                           | Yes      | `0`      | Retry attempts for the translation request in case of failure.                                                 |
+| Parameter         | Type                               | Optional | Default  | Description                                                                                                           |
+|-------------------|------------------------------------|----------|----------|-----------------------------------------------------------------------------------------------------------------------|
+| `text`            | `string`                           | No       | -        | Source text, phrase or word.                                                                                          |
+| `options`         | `TranslateOptions`                 | -        | -        | The options for translating.                                                                                          |
+| `options.from`    | `LanguageCode`, `auto` or `string` | Yes      | `'auto'` | The language name/ISO 639-1 code to translate from. If none is given, it will auto-detect the source language.        |
+| `options.to`      | `LanguageCode`, `auto` or `string` | Yes      | `'auto'` | The language name/ISO 639-1 code to translate to. If none is given, it will translate to native environment language. |
+| `options.raw`     | `boolean`                          | Yes      | `false`  | If `true`, it will return the raw output that was received from Google Translation Api.                               |
+| `options.timeout` | `number`                           | Yes      | `30_000` | Timeout duration for the translation request in milliseconds.                                                         |
+| `options.retry`   | `number`                           | Yes      | `0`      | Retry attempts for the translation request in case of failure.                                                        |
 
 #### Returns: `Promise<TranslationOption>`
 
@@ -293,9 +293,9 @@ import translate from '@kabeep/node-translate';
 // Output example sentence of the source word
 translate('example', { to: 'zh' }).then(res => {
     // => [
-    //     "it is vitally important that parents should set an <b>example</b>",
-    //     "she followed her brother's <b>example</b> and deserted her family",
-    //     "it's a good <b>example</b> of how European action can produce results",
+    //     "it is vitally important that parents should set an [example]",
+    //     "she followed her brother's [example] and deserted her family",
+    //     "it's a good [example] of how European action can produce results",
     // ]
     console.log(res.from.sentences);
 });

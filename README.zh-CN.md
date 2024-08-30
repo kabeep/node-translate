@@ -62,15 +62,15 @@ translate(text, options)
     .catch(console.error);
 ```
 
-| 参数                | 类型                 | 可选  | 默认值      | 描述                                      |
-|-------------------|--------------------|-----|----------|-----------------------------------------|
-| `text`            | `string`           | 否   | -        | 源文本、短语或单词。                              |
-| `options`         | `TranslateOptions` | -   | -        | 翻译选项。                                   |
-| `options.from`    | `LanguageCode`     | 是   | `'auto'` | 要从中翻译的语言名称/ISO 639-1代码。如果未指定，则会自动检测源语言。 |
-| `options.to`      | `LanguageCode`     | 是   | `'auto'` | 要翻译到的语言名称/ISO 639-1代码。如果未指定，则会翻译为英语。    |
-| `options.raw`     | `boolean`          | 是   | `false`  | 如果为 `true`，将返回从谷歌翻译 API 接收到的原始输出。       |
-| `options.timeout` | `number`           | Yes | `30_000` | 翻译请求的超时持续时间（以毫秒为单位）。                    |
-| `options.retry`   | `number`           | Yes | `0`      | 如果失败，请重试翻译请求。                           |
+| 参数                | 类型                 | 可选  | 默认值      | 描述                                       |
+|-------------------|--------------------|-----|----------|------------------------------------------|
+| `text`            | `string`           | 否   | -        | 源文本、短语或单词。                               |
+| `options`         | `TranslateOptions` | -   | -        | 翻译选项。                                    |
+| `options.from`    | `LanguageCode`     | 是   | `'auto'` | 要从中翻译的语言名称/ISO 639-1代码。如果未指定，则会自动检测源语言。  |
+| `options.to`      | `LanguageCode`     | 是   | `'auto'` | 要翻译到的语言名称/ISO 639-1代码。如果未指定，则会翻译为本机环境语言。 |
+| `options.raw`     | `boolean`          | 是   | `false`  | 如果为 `true`，将返回从谷歌翻译 API 接收到的原始输出。        |
+| `options.timeout` | `number`           | Yes | `30_000` | 翻译请求的超时持续时间（以毫秒为单位）。                     |
+| `options.retry`   | `number`           | Yes | `0`      | 如果失败，重试翻译请求的次数。                          |
 
 #### 返回: `Promise<TranslationOption>`
 
@@ -215,12 +215,12 @@ translate('例子', { to: 'en' }).then(res => {
 
 #### 使用语言名和大小写修正
 
-[View Case](example/language.ts)
+[查看用例](example/language.ts)
 
 ```javascript
 import translate from '@kabeep/node-translate';
 
-// Language name and capitalized correction
+// 使用语言名称并自动更正大小写
 translate('例子', { to: 'ENGlish' }).then(res => {
     // => example
     console.log(res.text);
@@ -290,9 +290,9 @@ import translate from '@kabeep/node-translate';
 // 输出源词的例句
 translate('example', { to: 'zh' }).then(res => {
     // => [
-    //     "it is vitally important that parents should set an <b>example</b>",
-    //     "she followed her brother's <b>example</b> and deserted her family",
-    //     "it's a good <b>example</b> of how European action can produce results",
+    //     "it is vitally important that parents should set an [example]",
+    //     "she followed her brother's [example] and deserted her family",
+    //     "it's a good [example] of how European action can produce results",
     // ]
     console.log(res.from.sentences);
 });
