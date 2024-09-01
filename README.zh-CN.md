@@ -78,7 +78,7 @@ translate(text, options)
 
 | 键                          | 类型                                             | 描述                                               |
 |----------------------------|------------------------------------------------|--------------------------------------------------|
-| `text`                     | `string`                                       | 译文。                                              |
+| `text`                     | `string`                                       | 译文摘要，长文本将会被截断，完整结果请使用 `to.text.value`。           |
 | `from`                     | `Record`                                       | -                                                |
 | `from.language`            | `Record`                                       | -                                                |
 | `from.language.didYouMean` | `boolean`                                      | 表示是否有语言建议。                                       |

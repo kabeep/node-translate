@@ -81,7 +81,7 @@ translate(text, options)
 
 | Key                        | Type                                           | Description                                                                                                          |
 |----------------------------|------------------------------------------------|----------------------------------------------------------------------------------------------------------------------|
-| `text`                     | `string`                                       | Translation text.                                                                                                    |
+| `text`                     | `string`                                       | Translation summary, long text will be truncated, please use `to.text.value` for complete results.                   |
 | `from`                     | `Record`                                       | -                                                                                                                    |
 | `from.language`            | `Record`                                       | -                                                                                                                    |
 | `from.language.didYouMean` | `boolean`                                      | Indicates whether there is a language suggestion.                                                                    |
