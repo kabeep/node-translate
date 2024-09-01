@@ -127,8 +127,8 @@ function parse(data: ResponseBody) {
         if (data[7]?.[0]) {
             let string_ = data[7][0];
 
-            string_ = string_.replace(/<b><i>/g, '[');
-            string_ = string_.replace(/<\/i><\/b>/g, ']');
+            string_ = string_.replace(/<b><i>|<b>|<i>|<em>/g, '[');
+            string_ = string_.replace(/<\/i><\/b>|<\/i>|<\/b>|<\/em>/g, ']');
 
             result.from.text.value = string_;
 
