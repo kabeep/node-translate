@@ -1,5 +1,5 @@
 import { expect, test } from 'vitest';
-import iso6391X from '../../src/core/iso-639-1-x';
+import iso6391X from '../../src/core/iso-639-1-x.js';
 
 test('Iso6391X.getName - should return the name of the language corresponding to the given code', () => {
     const name = iso6391X.getName('en');

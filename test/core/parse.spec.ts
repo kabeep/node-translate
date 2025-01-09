@@ -1,5 +1,5 @@
 import { expect, test } from 'vitest';
-import parse from '../../src/core/parse';
+import parse from '../../src/core/parse.js';
 
 const example1 = '[[["example","例子",null,null,10],[null,null,null,"Lìzi"]],[["noun",["example","case","instance"],[["example",["例","例子","范例","榜样","典范","例证"],null,0.2649736],["case",["外壳","例","案件","案","壳体","例子"],null,0.015666196],["instance",["例子","例","事例","比方","详","故"],null,0.0037210477]],"例子",1]],"zh-CN",null,null,[["例子",null,[["example",1000,true,false,[10,3],null,[[3]]],["examples",0,true,false,[8]]],[[0,2]],"例子",0,0]],1,[],[["zh-CN"],null,[1],["zh-CN"]]]';
 
@@ -51,8 +51,10 @@ test('parse - should parse the sentences for response body', async () => {
 
 test('parse - should return error object if parameter is exceptional', async () => {
     try {
-        parse(undefined);
+        parse(undefined as any);
     } catch (err) {
-        expect(err.message).toBe('EPARSE');
+        expect((
+            err as Error
+        ).message).toBe('EPARSE');
     }
 });

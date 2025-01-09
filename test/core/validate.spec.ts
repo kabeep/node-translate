@@ -1,5 +1,5 @@
 import { expect, test } from 'vitest';
-import validate from '../../src/core/validate';
+import validate from '../../src/core/validate.js';
 
 test('validate - should return false for empty code', () => {
     const code = '';
