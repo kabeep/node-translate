@@ -46,7 +46,7 @@
         "os-locale": "^6.0.2"
     },
     "author": "Zhang Zixin (kabeep)",
-    "homepage": "https://github.com/kabeep/node-translate#readme",
+    "homepage": "https://kabeep.github.io/node-translate",
     "repository": "git@github.com:kabeep/node-translate.git",
     "bugs": "https://github.com/kabeep/node-translate/issue",
     "keywords": [
