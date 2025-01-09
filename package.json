@@ -9,7 +9,7 @@
         "dist"
     ],
     "scripts": {
-        "docs": "jsdoc -c jsdoc.config.json",
+        "docs": "jsdoc -c jsdoc.config.json && ts-node scripts/docs.ts",
         "lint": "xo src/**/*.ts --fix",
         "pretest": "npm run lint",
         "test": "vitest run",
