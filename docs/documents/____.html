@@ -1,0 +1,551 @@
+<!DOCTYPE html><html class="default" lang="en"><head><meta charset="utf-8"><meta http-equiv="x-ua-compatible" content="IE=edge"><title>简体中文 | @kabeep/node-translate - v1.1.6</title><meta name="description" content="Documentation for @kabeep/node-translate"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="../assets/style.css"><link rel="stylesheet" href="../assets/highlight.css"><script defer="" src="../assets/main.js"></script><script async="" src="../assets/icons.js" id="tsd-icons-script"></script><script async="" src="../assets/search.js" id="tsd-search-script"></script><script async="" src="../assets/navigation.js" id="tsd-nav-script"></script><style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --md-sys-color-primary: #dfc64c;
+    --md-sys-color-on-primary: #393000;
+    --md-sys-color-primary-container: #524600;
+    --md-sys-color-on-primary-container: #fce265;
+    --md-sys-color-secondary: #d1c6a2;
+    --md-sys-color-on-secondary: #363016;
+    --md-sys-color-secondary-container: #4d472b;
+    --md-sys-color-on-secondary-container: #ede2bc;
+    --md-sys-color-tertiary: #a9d0b4;
+    --md-sys-color-on-tertiary: #143723;
+    --md-sys-color-tertiary-container: #2b4e39;
+    --md-sys-color-on-tertiary-container: #c4eccf;
+    --md-sys-color-error: #ffb4ab;
+    --md-sys-color-on-error: #690005;
+    --md-sys-color-error-container: #93000a;
+    --md-sys-color-on-error-container: #ffb4ab;
+    --md-sys-color-background: #1d1b16;
+    --md-sys-color-on-background: #e7e2d9;
+    --md-sys-color-surface: #1d1b16;
+    --md-sys-color-on-surface: #e7e2d9;
+    --md-sys-color-surface-variant: #4a4739;
+    --md-sys-color-on-surface-variant: #cdc6b4;
+    --md-sys-color-outline: #969080;
+    --md-sys-color-outline-variant: #4a4739;
+    --md-sys-color-shadow: #000000;
+    --md-sys-color-scrim: #000000;
+    --md-sys-color-inverse-surface: #e7e2d9;
+    --md-sys-color-inverse-on-surface: #32302a;
+    --md-sys-color-inverse-primary: #6d5e00;
+    --md-sys-color-surface-dim: #15130e;
+    --md-sys-color-surface-bright: #3b3933;
+    --md-sys-color-surface-container-lowest: #0f0e09;
+    --md-sys-color-surface-container-low: #1d1b16;
+    --md-sys-color-surface-container: #21201a;
+    --md-sys-color-surface-container-high: #2c2a24;
+    --md-sys-color-surface-container-highest: #37352f
+  }
+}
+:root[data-theme="dark"] {
+  --md-sys-color-primary: #dfc64c;
+  --md-sys-color-on-primary: #393000;
+  --md-sys-color-primary-container: #524600;
+  --md-sys-color-on-primary-container: #fce265;
+  --md-sys-color-secondary: #d1c6a2;
+  --md-sys-color-on-secondary: #363016;
+  --md-sys-color-secondary-container: #4d472b;
+  --md-sys-color-on-secondary-container: #ede2bc;
+  --md-sys-color-tertiary: #a9d0b4;
+  --md-sys-color-on-tertiary: #143723;
+  --md-sys-color-tertiary-container: #2b4e39;
+  --md-sys-color-on-tertiary-container: #c4eccf;
+  --md-sys-color-error: #ffb4ab;
+  --md-sys-color-on-error: #690005;
+  --md-sys-color-error-container: #93000a;
+  --md-sys-color-on-error-container: #ffb4ab;
+  --md-sys-color-background: #1d1b16;
+  --md-sys-color-on-background: #e7e2d9;
+  --md-sys-color-surface: #1d1b16;
+  --md-sys-color-on-surface: #e7e2d9;
+  --md-sys-color-surface-variant: #4a4739;
+  --md-sys-color-on-surface-variant: #cdc6b4;
+  --md-sys-color-outline: #969080;
+  --md-sys-color-outline-variant: #4a4739;
+  --md-sys-color-shadow: #000000;
+  --md-sys-color-scrim: #000000;
+  --md-sys-color-inverse-surface: #e7e2d9;
+  --md-sys-color-inverse-on-surface: #32302a;
+  --md-sys-color-inverse-primary: #6d5e00;
+  --md-sys-color-surface-dim: #15130e;
+  --md-sys-color-surface-bright: #3b3933;
+  --md-sys-color-surface-container-lowest: #0f0e09;
+  --md-sys-color-surface-container-low: #1d1b16;
+  --md-sys-color-surface-container: #21201a;
+  --md-sys-color-surface-container-high: #2c2a24;
+  --md-sys-color-surface-container-highest: #37352f
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --md-sys-color-primary: #6d5e00;
+    --md-sys-color-on-primary: #ffffff;
+    --md-sys-color-primary-container: #fce265;
+    --md-sys-color-on-primary-container: #211b00;
+    --md-sys-color-secondary: #665e40;
+    --md-sys-color-on-secondary: #ffffff;
+    --md-sys-color-secondary-container: #ede2bc;
+    --md-sys-color-on-secondary-container: #201b04;
+    --md-sys-color-tertiary: #43664f;
+    --md-sys-color-on-tertiary: #ffffff;
+    --md-sys-color-tertiary-container: #c4eccf;
+    --md-sys-color-on-tertiary-container: #002110;
+    --md-sys-color-error: #ba1a1a;
+    --md-sys-color-on-error: #ffffff;
+    --md-sys-color-error-container: #ffdad6;
+    --md-sys-color-on-error-container: #410002;
+    --md-sys-color-background: #fffbff;
+    --md-sys-color-on-background: #1d1b16;
+    --md-sys-color-surface: #fffbff;
+    --md-sys-color-on-surface: #1d1b16;
+    --md-sys-color-surface-variant: #e9e2d0;
+    --md-sys-color-on-surface-variant: #4a4739;
+    --md-sys-color-outline: #7c7768;
+    --md-sys-color-outline-variant: #cdc6b4;
+    --md-sys-color-shadow: #000000;
+    --md-sys-color-scrim: #000000;
+    --md-sys-color-inverse-surface: #32302a;
+    --md-sys-color-inverse-on-surface: #f6f0e7;
+    --md-sys-color-inverse-primary: #dfc64c;
+    --md-sys-color-surface-dim: #dfd9d0;
+    --md-sys-color-surface-bright: #fef9ef;
+    --md-sys-color-surface-container-lowest: #ffffff;
+    --md-sys-color-surface-container-low: #f9f3ea;
+    --md-sys-color-surface-container: #f3ede4;
+    --md-sys-color-surface-container-high: #ede7de;
+    --md-sys-color-surface-container-highest: #e7e2d9
+  }
+}
+:root[data-theme="light"] {
+  --md-sys-color-primary: #6d5e00;
+  --md-sys-color-on-primary: #ffffff;
+  --md-sys-color-primary-container: #fce265;
+  --md-sys-color-on-primary-container: #211b00;
+  --md-sys-color-secondary: #665e40;
+  --md-sys-color-on-secondary: #ffffff;
+  --md-sys-color-secondary-container: #ede2bc;
+  --md-sys-color-on-secondary-container: #201b04;
+  --md-sys-color-tertiary: #43664f;
+  --md-sys-color-on-tertiary: #ffffff;
+  --md-sys-color-tertiary-container: #c4eccf;
+  --md-sys-color-on-tertiary-container: #002110;
+  --md-sys-color-error: #ba1a1a;
+  --md-sys-color-on-error: #ffffff;
+  --md-sys-color-error-container: #ffdad6;
+  --md-sys-color-on-error-container: #410002;
+  --md-sys-color-background: #fffbff;
+  --md-sys-color-on-background: #1d1b16;
+  --md-sys-color-surface: #fffbff;
+  --md-sys-color-on-surface: #1d1b16;
+  --md-sys-color-surface-variant: #e9e2d0;
+  --md-sys-color-on-surface-variant: #4a4739;
+  --md-sys-color-outline: #7c7768;
+  --md-sys-color-outline-variant: #cdc6b4;
+  --md-sys-color-shadow: #000000;
+  --md-sys-color-scrim: #000000;
+  --md-sys-color-inverse-surface: #32302a;
+  --md-sys-color-inverse-on-surface: #f6f0e7;
+  --md-sys-color-inverse-primary: #dfc64c;
+  --md-sys-color-surface-dim: #dfd9d0;
+  --md-sys-color-surface-bright: #fef9ef;
+  --md-sys-color-surface-container-lowest: #ffffff;
+  --md-sys-color-surface-container-low: #f9f3ea;
+  --md-sys-color-surface-container: #f3ede4;
+  --md-sys-color-surface-container-high: #ede7de;
+  --md-sys-color-surface-container-highest: #e7e2d9
+}
+</style><link rel="stylesheet" href="../assets/material-style.css"></head><body><script>document.documentElement.dataset.theme = localStorage.getItem("tsd-theme") || "os";document.body.style.display="none";setTimeout(() => app?app.showPage():document.body.style.removeProperty("display"),500)</script><header class="tsd-page-toolbar"><div class="tsd-toolbar-contents container"><div class="table-cell" id="tsd-search" data-base=".."><div class="field"><label for="tsd-search-field" class="tsd-widget tsd-toolbar-icon search no-caption"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><use href="../assets/icons.svg#icon-search"></use></svg></label><input type="text" id="tsd-search-field" aria-label="Search"></div><div class="field"><div id="tsd-toolbar-links"><a href="https://kabeep.github.io/node-translate/">Docs</a><a href="https://github.com/kabeep/node-translate">GitHub</a><a href="https://www.npmjs.com/package/@kabeep/node-translate">NPM</a></div></div><ul class="results"><li class="state loading">Preparing search index...</li><li class="state failure">The search index is not available</li></ul><a href="../index.html" class="title">@kabeep/node-translate - v1.1.6</a></div><div class="table-cell" id="tsd-widgets"><a href="#" class="tsd-widget tsd-toolbar-icon menu no-caption" data-toggle="menu" aria-label="Menu"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><use href="../assets/icons.svg#icon-menu"></use></svg></a></div></div></header><div class="container container-main"><div class="col-content"><div class="tsd-page-title"><ul class="tsd-breadcrumb"><li><a href="../modules.html">@kabeep/node-translate</a></li><li><a href="____.html">简体中文</a></li></ul></div><div class="tsd-panel tsd-typography"><div align="center">
+<img width="630" src="../media/node-translate-logo.png" alt="logo">
+<p>一个强大、安全且功能丰富的 API，通过 Google 翻译。</p>
+<hr>
+<p><a href="https://nodejs.org/docs/latest/api/" target="_blank" class="external"><img src="https://img.shields.io/node/v/%40kabeep%2Fnode-translate?color=lightseagreen" alt="NodeJS"></a>
+<a href="LICENSE"><img src="https://img.shields.io/github/license/kabeep/node-translate?color=slateblue" alt="License"></a>
+<a href="https://www.npmjs.com/package/@kabeep/node-translate" target="_blank" class="external"><img src="https://img.shields.io/npm/d18m/%40kabeep%2Fnode-translate?color=cornflowerblue" alt="NPM"></a>
+<a href="https://codecov.io/gh/kabeep/node-translate" target="_blank" class="external"><img src="https://img.shields.io/codecov/c/github/kabeep/node-translate?logo=codecov&amp;color=mediumvioletred" alt="Codecov"></a>
+<a href="https://app.codacy.com/gh/kabeep/node-translate/dashboard?utm_source=gh&amp;utm_medium=referral&amp;utm_content=&amp;utm_campaign=Badge_grade" target="_blank" class="external"><img src="https://img.shields.io/codacy/grade/5c81a6d331794c7a92bfd6743551e00f?logo=codacy&amp;logoColor=dodgerblue&amp;color=dodgerblue" alt="Codacy"></a>
+<a href="https://dl.circleci.com/status-badge/redirect/circleci/Qh23T2Zgw4Fy4V8uvKaymp/VdeCLjaHhZRmKgzXoeD65a/tree/master" target="_blank" class="external"><img src="https://dl.circleci.com/status-badge/img/circleci/Qh23T2Zgw4Fy4V8uvKaymp/VdeCLjaHhZRmKgzXoeD65a/tree/master.svg?style=shield" alt="CircleCI"></a></p>
+<p><a href="../media/../index.html">English</a> | 简体中文</p>
+<p><img src="https://repobeats.axiom.co/api/embed/df1b56248835381ad7729bf16ff397775e49072d.svg" alt="Alt" title="Repobeats analytics image"></p>
+</div>
+<a id="md:📖-简介" class="tsd-anchor"></a><h2 class="tsd-anchor-link">📖 简介<a href="#md:📖-简介" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2><blockquote>
+<p>感谢 <a href="https://github.com/matheuss" target="_blank" class="external">matheuss</a> 和 <a href="https://github.com/iamtraction" target="_blank" class="external">iamtraction</a>
+编写了该库的原始版本。由于原始版本作者不再积极维护，我使用 Typescript 和 ISO-639-1 重写了该库，使程序变得安全提供更丰富地翻译结果，并解决了程序异常。</p>
+</blockquote>
+<a id="md:什么是新的？" class="tsd-anchor"></a><h4 class="tsd-anchor-link">什么是新的？<a href="#md:什么是新的？" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><ul>
+<li>自适应本机语言翻译</li>
+<li>近义词、多义解释和例句</li>
+<li>复杂网络中的超时与重试参数</li>
+<li>支持语言、语言代码、母语和自适应语言列表查询</li>
+<li>支持 iso-639-1、小语种、特殊语种和 Wikipedia 上最新的变更</li>
+<li>安全的 API 类型和完整覆盖率</li>
+<li>可控的错误状态</li>
+</ul>
+<a id="md:⚙️-安装" class="tsd-anchor"></a><h2 class="tsd-anchor-link">⚙️ 安装<a href="#md:⚙️-安装" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2><pre><code class="bash"><span class="hl-0">npm</span><span class="hl-1"> </span><span class="hl-2">install</span><span class="hl-1"> </span><span class="hl-2">@kabeep/node-translate</span><span class="hl-1"> </span><span class="hl-3">--save</span>
+</code><button type="button">Copy</button></pre>
+
+<pre><code class="bash"><span class="hl-0">yarn</span><span class="hl-1"> </span><span class="hl-2">add</span><span class="hl-1"> </span><span class="hl-2">@kabeep/node-translate</span>
+</code><button type="button">Copy</button></pre>
+
+<pre><code class="bash"><span class="hl-0">pnpm</span><span class="hl-1"> </span><span class="hl-2">add</span><span class="hl-1"> </span><span class="hl-2">@kabeep/node-translate</span>
+</code><button type="button">Copy</button></pre>
+
+<a id="md:🚀-使用" class="tsd-anchor"></a><h2 class="tsd-anchor-link">🚀 使用<a href="#md:🚀-使用" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2><pre><code class="javascript"><span class="hl-4">import</span><span class="hl-1"> </span><span class="hl-5">translate</span><span class="hl-1"> </span><span class="hl-4">from</span><span class="hl-1"> </span><span class="hl-2">'@kabeep/node-translate'</span><span class="hl-1">;</span>
+</code><button type="button">Copy</button></pre>
+
+<a id="md:函数-translatetext-options" class="tsd-anchor"></a><h4 class="tsd-anchor-link">函数: <code>translate(text, options)</code><a href="#md:函数-translatetext-options" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><pre><code class="javascript"><span class="hl-0">translate</span><span class="hl-1">(</span><span class="hl-5">text</span><span class="hl-1">, </span><span class="hl-5">options</span><span class="hl-1">)</span><br><span class="hl-1">    .</span><span class="hl-0">then</span><span class="hl-1">(</span><span class="hl-5">console</span><span class="hl-1">.</span><span class="hl-5">log</span><span class="hl-1">)</span><br><span class="hl-1">    .</span><span class="hl-0">catch</span><span class="hl-1">(</span><span class="hl-5">console</span><span class="hl-1">.</span><span class="hl-5">error</span><span class="hl-1">);</span>
+</code><button type="button">Copy</button></pre>
+
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>可选</th>
+<th>默认值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>text</code></td>
+<td><code>string</code></td>
+<td>否</td>
+<td>-</td>
+<td>源文本、短语或单词。</td>
+</tr>
+<tr>
+<td><code>options</code></td>
+<td><code>TranslateOptions</code></td>
+<td>-</td>
+<td>-</td>
+<td>翻译选项。</td>
+</tr>
+<tr>
+<td><code>options.from</code></td>
+<td><code>LanguageCode</code></td>
+<td>是</td>
+<td><code>'auto'</code></td>
+<td>要从中翻译的语言名称/ISO 639-1代码。如果未指定，则会自动检测源语言。</td>
+</tr>
+<tr>
+<td><code>options.to</code></td>
+<td><code>LanguageCode</code></td>
+<td>是</td>
+<td><code>'auto'</code></td>
+<td>要翻译到的语言名称/ISO 639-1代码。如果未指定，则会翻译为本机环境语言。</td>
+</tr>
+<tr>
+<td><code>options.raw</code></td>
+<td><code>boolean</code></td>
+<td>是</td>
+<td><code>false</code></td>
+<td>如果为 <code>true</code>，将返回从谷歌翻译 API 接收到的原始输出。</td>
+</tr>
+<tr>
+<td><code>options.timeout</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td><code>30_000</code></td>
+<td>翻译请求的超时持续时间（以毫秒为单位）。</td>
+</tr>
+<tr>
+<td><code>options.retry</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td><code>0</code></td>
+<td>如果失败，重试翻译请求的次数。</td>
+</tr>
+</tbody>
+</table>
+<a id="md:返回-promise" class="tsd-anchor"></a><h4 class="tsd-anchor-link">返回: <code>Promise&lt;TranslationOption&gt;</code><a href="#md:返回-promise" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><p><strong>Response Object:</strong></p>
+<table>
+<thead>
+<tr>
+<th>键</th>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>text</code></td>
+<td><code>string</code></td>
+<td>译文摘要，长文本将会被截断，完整结果请使用 <code>to.text.value</code>。</td>
+</tr>
+<tr>
+<td><code>from</code></td>
+<td><code>Record</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>from.language</code></td>
+<td><code>Record</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>from.language.didYouMean</code></td>
+<td><code>boolean</code></td>
+<td>表示是否有语言建议。</td>
+</tr>
+<tr>
+<td><code>from.language.iso</code></td>
+<td><code>string</code></td>
+<td>检测到的语言的 ISO 代码。</td>
+</tr>
+<tr>
+<td><code>from.text</code></td>
+<td><code>Record</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>from.text.autoCorrected</code></td>
+<td><code>boolean</code></td>
+<td>表示是否进行了自动更正。</td>
+</tr>
+<tr>
+<td><code>from.text.value</code></td>
+<td><code>string</code></td>
+<td>源文本。</td>
+</tr>
+<tr>
+<td><code>from.text.phonetics</code></td>
+<td><code>string</code></td>
+<td>源文本的音标。</td>
+</tr>
+<tr>
+<td><code>from.text.didYouMean</code></td>
+<td><code>boolean</code></td>
+<td>表示是否对源文本提出了建议。</td>
+</tr>
+<tr>
+<td><code>from.synonyms</code></td>
+<td><code>string[]</code></td>
+<td>源词的同义词。</td>
+</tr>
+<tr>
+<td><code>from.sentences</code></td>
+<td><code>string[]</code></td>
+<td>源词的示例句。</td>
+</tr>
+<tr>
+<td><code>to</code></td>
+<td><code>Record</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>to.text</code></td>
+<td><code>Record</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>to.text.phonetics</code></td>
+<td><code>string</code></td>
+<td>译文的音标。</td>
+</tr>
+<tr>
+<td><code>to.text.value</code></td>
+<td><code>string</code></td>
+<td>译文。</td>
+</tr>
+<tr>
+<td><code>to.polysemy</code></td>
+<td><code>Array&lt;{ label: string; children: string[] }&gt;</code></td>
+<td>译文的多义信息。</td>
+</tr>
+<tr>
+<td><code>raw</code></td>
+<td><code>string</code></td>
+<td>翻译请求的原始响应主体。仅在请求选项中的 <code>options.raw</code> 为 <code>true</code> 时返回。</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<pre><code class="javascript"><span class="hl-4">import</span><span class="hl-1"> { </span><span class="hl-5">iso6391X</span><span class="hl-1"> } </span><span class="hl-4">from</span><span class="hl-1"> </span><span class="hl-2">'@kabeep/node-translate'</span><span class="hl-1">;</span>
+</code><button type="button">Copy</button></pre>
+
+<a id="md:函数-getnamecode" class="tsd-anchor"></a><h4 class="tsd-anchor-link">函数: <code>getName(code)</code><a href="#md:函数-getnamecode" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><pre><code class="javascript"><span class="hl-5">iso6391X</span><span class="hl-1">.</span><span class="hl-0">getName</span><span class="hl-1">(</span><span class="hl-5">code</span><span class="hl-1">);</span>
+</code><button type="button">Copy</button></pre>
+
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>可选</th>
+<th>默认值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>code</code></td>
+<td><code>string</code></td>
+<td>否</td>
+<td>-</td>
+<td>ISO-639-1 语言代码或 Google 翻译语言代码。</td>
+</tr>
+</tbody>
+</table>
+<a id="md:返回-string" class="tsd-anchor"></a><h4 class="tsd-anchor-link">返回: <code>string</code><a href="#md:返回-string" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><hr>
+<a id="md:函数-getallnames" class="tsd-anchor"></a><h4 class="tsd-anchor-link">函数: <code>getAllNames()</code><a href="#md:函数-getallnames" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><pre><code class="javascript"><span class="hl-5">iso6391X</span><span class="hl-1">.</span><span class="hl-0">getAllNames</span><span class="hl-1">();</span>
+</code><button type="button">Copy</button></pre>
+
+<a id="md:返回-string-1" class="tsd-anchor"></a><h4 class="tsd-anchor-link">返回: <code>string[]</code><a href="#md:返回-string-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><hr>
+<a id="md:函数-getnativenamecode" class="tsd-anchor"></a><h4 class="tsd-anchor-link">函数: <code>getNativeName(code)</code><a href="#md:函数-getnativenamecode" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><pre><code class="javascript"><span class="hl-5">iso6391X</span><span class="hl-1">.</span><span class="hl-0">getNativeName</span><span class="hl-1">(</span><span class="hl-5">code</span><span class="hl-1">);</span>
+</code><button type="button">Copy</button></pre>
+
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>可选</th>
+<th>默认值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>code</code></td>
+<td><code>string</code></td>
+<td>否</td>
+<td>-</td>
+<td>ISO-639-1 语言代码或 Google 翻译语言代码。</td>
+</tr>
+</tbody>
+</table>
+<a id="md:返回-string-2" class="tsd-anchor"></a><h4 class="tsd-anchor-link">返回: <code>string</code><a href="#md:返回-string-2" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><hr>
+<a id="md:函数-getallnativenames" class="tsd-anchor"></a><h4 class="tsd-anchor-link">函数: <code>getAllNativeNames()</code><a href="#md:函数-getallnativenames" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><pre><code class="javascript"><span class="hl-5">iso6391X</span><span class="hl-1">.</span><span class="hl-0">getAllNativeNames</span><span class="hl-1">();</span>
+</code><button type="button">Copy</button></pre>
+
+<a id="md:返回-string-3" class="tsd-anchor"></a><h4 class="tsd-anchor-link">返回: <code>string[]</code><a href="#md:返回-string-3" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><hr>
+<a id="md:函数-getcodename" class="tsd-anchor"></a><h4 class="tsd-anchor-link">函数: <code>getCode(name)</code><a href="#md:函数-getcodename" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><pre><code class="javascript"><span class="hl-5">iso6391X</span><span class="hl-1">.</span><span class="hl-0">getCode</span><span class="hl-1">(</span><span class="hl-5">name</span><span class="hl-1">);</span>
+</code><button type="button">Copy</button></pre>
+
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>可选</th>
+<th>默认值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>code</code></td>
+<td><code>string</code></td>
+<td>否</td>
+<td>-</td>
+<td>ISO-639-1 语言名称或 Google 翻译语言名称。</td>
+</tr>
+</tbody>
+</table>
+<a id="md:返回-languagecode" class="tsd-anchor"></a><h4 class="tsd-anchor-link">返回: <code>LanguageCode</code><a href="#md:返回-languagecode" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><hr>
+<a id="md:函数-getallcodes" class="tsd-anchor"></a><h4 class="tsd-anchor-link">函数: <code>getAllCodes()</code><a href="#md:函数-getallcodes" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><pre><code class="javascript"><span class="hl-5">iso6391X</span><span class="hl-1">.</span><span class="hl-0">getAllCodes</span><span class="hl-1">();</span>
+</code><button type="button">Copy</button></pre>
+
+<a id="md:返回-languagecode-1" class="tsd-anchor"></a><h4 class="tsd-anchor-link">返回: <code>LanguageCode[]</code><a href="#md:返回-languagecode-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><hr>
+<a id="md:函数-getlanguagescodes" class="tsd-anchor"></a><h4 class="tsd-anchor-link">函数: <code>getLanguages(codes)</code><a href="#md:函数-getlanguagescodes" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><pre><code class="javascript"><span class="hl-5">iso6391X</span><span class="hl-1">.</span><span class="hl-0">getLanguages</span><span class="hl-1">(</span><span class="hl-5">codes</span><span class="hl-1">);</span>
+</code><button type="button">Copy</button></pre>
+
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>可选</th>
+<th>默认值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>code</code></td>
+<td><code>string</code></td>
+<td>否</td>
+<td>-</td>
+<td>ISO-639-1 语言代码元组或 Google 翻译语言代码元组。</td>
+</tr>
+</tbody>
+</table>
+<a id="md:返回-languageoption" class="tsd-anchor"></a><h4 class="tsd-anchor-link">返回: <code>LanguageOption[]</code><a href="#md:返回-languageoption" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><hr>
+<a id="md:函数-getalldetections" class="tsd-anchor"></a><h4 class="tsd-anchor-link">函数: <code>getAllDetections()</code><a href="#md:函数-getalldetections" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><pre><code class="javascript"><span class="hl-5">iso6391X</span><span class="hl-1">.</span><span class="hl-0">getAllDetections</span><span class="hl-1">();</span>
+</code><button type="button">Copy</button></pre>
+
+<a id="md:返回-languagecode-2" class="tsd-anchor"></a><h4 class="tsd-anchor-link">返回: <code>LanguageCode[]</code><a href="#md:返回-languagecode-2" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><a id="md:🪄-例子" class="tsd-anchor"></a><h2 class="tsd-anchor-link">🪄 例子<a href="#md:🪄-例子" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2><a id="md:使用语言代码" class="tsd-anchor"></a><h4 class="tsd-anchor-link">使用语言代码<a href="#md:使用语言代码" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><p><a href="../media/default.ts">查看用例</a></p>
+<pre><code class="javascript"><span class="hl-4">import</span><span class="hl-1"> </span><span class="hl-5">translate</span><span class="hl-1"> </span><span class="hl-4">from</span><span class="hl-1"> </span><span class="hl-2">'@kabeep/node-translate'</span><span class="hl-1">;</span><br><br><span class="hl-6">// 简单示例</span><br><span class="hl-0">translate</span><span class="hl-1">(</span><span class="hl-2">'例子'</span><span class="hl-1">, { </span><span class="hl-5">to:</span><span class="hl-1"> </span><span class="hl-2">'en'</span><span class="hl-1"> }).</span><span class="hl-0">then</span><span class="hl-1">(</span><span class="hl-5">res</span><span class="hl-1"> </span><span class="hl-3">=&gt;</span><span class="hl-1"> {</span><br><span class="hl-1">    </span><span class="hl-6">// =&gt; example</span><br><span class="hl-1">    </span><span class="hl-5">console</span><span class="hl-1">.</span><span class="hl-0">log</span><span class="hl-1">(</span><span class="hl-5">res</span><span class="hl-1">.</span><span class="hl-5">text</span><span class="hl-1">);</span><br><span class="hl-1">});</span>
+</code><button type="button">Copy</button></pre>
+
+<a id="md:使用语言名和大小写修正" class="tsd-anchor"></a><h4 class="tsd-anchor-link">使用语言名和大小写修正<a href="#md:使用语言名和大小写修正" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><p><a href="../media/language.ts">查看用例</a></p>
+<pre><code class="javascript"><span class="hl-4">import</span><span class="hl-1"> </span><span class="hl-5">translate</span><span class="hl-1"> </span><span class="hl-4">from</span><span class="hl-1"> </span><span class="hl-2">'@kabeep/node-translate'</span><span class="hl-1">;</span><br><br><span class="hl-6">// 使用语言名称并自动更正大小写</span><br><span class="hl-0">translate</span><span class="hl-1">(</span><span class="hl-2">'例子'</span><span class="hl-1">, { </span><span class="hl-5">to:</span><span class="hl-1"> </span><span class="hl-2">'ENGlish'</span><span class="hl-1"> }).</span><span class="hl-0">then</span><span class="hl-1">(</span><span class="hl-5">res</span><span class="hl-1"> </span><span class="hl-3">=&gt;</span><span class="hl-1"> {</span><br><span class="hl-1">    </span><span class="hl-6">// =&gt; example</span><br><span class="hl-1">    </span><span class="hl-5">console</span><span class="hl-1">.</span><span class="hl-0">log</span><span class="hl-1">(</span><span class="hl-5">res</span><span class="hl-1">.</span><span class="hl-5">text</span><span class="hl-1">);</span><br><span class="hl-1">});</span>
+</code><button type="button">Copy</button></pre>
+
+<a id="md:自适应翻译" class="tsd-anchor"></a><h4 class="tsd-anchor-link">自适应翻译<a href="#md:自适应翻译" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><p><a href="../media/detection.ts">查看用例</a></p>
+<pre><code class="javascript"><span class="hl-4">import</span><span class="hl-1"> </span><span class="hl-5">translate</span><span class="hl-1"> </span><span class="hl-4">from</span><span class="hl-1"> </span><span class="hl-2">'@kabeep/node-translate'</span><span class="hl-1">;</span><br><br><span class="hl-6">// 使用 `auto` 或将 `from` 参数留空以通过适应性检测语言</span><br><span class="hl-6">// 使用 `auto` 或将 `to ` 参数留空以通过操作系统检测语言（示例环境使用 `en`）</span><br><span class="hl-0">translate</span><span class="hl-1">(</span><span class="hl-2">'例子'</span><span class="hl-1">).</span><span class="hl-0">then</span><span class="hl-1">(</span><span class="hl-5">res</span><span class="hl-1"> </span><span class="hl-3">=&gt;</span><span class="hl-1"> {</span><br><span class="hl-1">    </span><span class="hl-6">// =&gt; example</span><br><span class="hl-1">    </span><span class="hl-5">console</span><span class="hl-1">.</span><span class="hl-0">log</span><span class="hl-1">(</span><span class="hl-5">res</span><span class="hl-1">.</span><span class="hl-5">to</span><span class="hl-1">.</span><span class="hl-5">text</span><span class="hl-1">.</span><span class="hl-5">value</span><span class="hl-1">);</span><br><span class="hl-1">});</span>
+</code><button type="button">Copy</button></pre>
+
+<a id="md:源文本与译本音标" class="tsd-anchor"></a><h4 class="tsd-anchor-link">源文本与译本音标<a href="#md:源文本与译本音标" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><p><a href="../media/phonetics.ts">查看用例</a></p>
+<pre><code class="javascript"><span class="hl-4">import</span><span class="hl-1"> </span><span class="hl-5">translate</span><span class="hl-1"> </span><span class="hl-4">from</span><span class="hl-1"> </span><span class="hl-2">'@kabeep/node-translate'</span><span class="hl-1">;</span><br><br><span class="hl-6">// 输出源文本和译文的音标</span><br><span class="hl-0">translate</span><span class="hl-1">(</span><span class="hl-2">'例子'</span><span class="hl-1">, { </span><span class="hl-5">to:</span><span class="hl-1"> </span><span class="hl-2">'ja'</span><span class="hl-1"> }).</span><span class="hl-0">then</span><span class="hl-1">(</span><span class="hl-5">res</span><span class="hl-1"> </span><span class="hl-3">=&gt;</span><span class="hl-1"> {</span><br><span class="hl-1">    </span><span class="hl-6">// =&gt; Lìzi</span><br><span class="hl-1">    </span><span class="hl-5">console</span><span class="hl-1">.</span><span class="hl-0">log</span><span class="hl-1">(</span><span class="hl-5">res</span><span class="hl-1">.</span><span class="hl-5">from</span><span class="hl-1">.</span><span class="hl-5">text</span><span class="hl-1">.</span><span class="hl-5">phonetics</span><span class="hl-1">);</span><br><span class="hl-1">    </span><span class="hl-6">// =&gt; Rei</span><br><span class="hl-1">    </span><span class="hl-5">console</span><span class="hl-1">.</span><span class="hl-0">log</span><span class="hl-1">(</span><span class="hl-5">res</span><span class="hl-1">.</span><span class="hl-5">to</span><span class="hl-1">.</span><span class="hl-5">text</span><span class="hl-1">.</span><span class="hl-5">phonetics</span><span class="hl-1">);</span><br><span class="hl-1">});</span>
+</code><button type="button">Copy</button></pre>
+
+<a id="md:源文本同、近义词" class="tsd-anchor"></a><h4 class="tsd-anchor-link">源文本同、近义词<a href="#md:源文本同、近义词" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><p><a href="../media/synonym.ts">查看用例</a></p>
+<pre><code class="javascript"><span class="hl-4">import</span><span class="hl-1"> </span><span class="hl-5">translate</span><span class="hl-1"> </span><span class="hl-4">from</span><span class="hl-1"> </span><span class="hl-2">'@kabeep/node-translate'</span><span class="hl-1">;</span><br><br><span class="hl-6">// 输出源词的同义词</span><br><span class="hl-0">translate</span><span class="hl-1">(</span><span class="hl-2">'例子'</span><span class="hl-1">, { </span><span class="hl-5">to:</span><span class="hl-1"> </span><span class="hl-2">'en'</span><span class="hl-1"> }).</span><span class="hl-0">then</span><span class="hl-1">(</span><span class="hl-5">res</span><span class="hl-1"> </span><span class="hl-3">=&gt;</span><span class="hl-1"> {</span><br><span class="hl-1">    </span><span class="hl-6">// =&gt;</span><br><span class="hl-1">    </span><span class="hl-6">// [</span><br><span class="hl-1">    </span><span class="hl-6">//     '例',</span><br><span class="hl-1">    </span><span class="hl-6">//     '例子',</span><br><span class="hl-1">    </span><span class="hl-6">//     '范例',</span><br><span class="hl-1">    </span><span class="hl-6">//     '榜样',</span><br><span class="hl-1">    </span><span class="hl-6">//     '典范',</span><br><span class="hl-1">    </span><span class="hl-6">//     '例证',</span><br><span class="hl-1">    </span><span class="hl-6">// ]</span><br><span class="hl-1">    </span><span class="hl-5">console</span><span class="hl-1">.</span><span class="hl-0">log</span><span class="hl-1">(</span><span class="hl-5">res</span><span class="hl-1">.</span><span class="hl-5">from</span><span class="hl-1">.</span><span class="hl-5">synonyms</span><span class="hl-1">);</span><br><span class="hl-1">});</span>
+</code><button type="button">Copy</button></pre>
+
+<a id="md:源文本例句" class="tsd-anchor"></a><h4 class="tsd-anchor-link">源文本例句<a href="#md:源文本例句" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><p><a href="../media/sentence.ts">查看用例</a></p>
+<pre><code class="javascript"><span class="hl-4">import</span><span class="hl-1"> </span><span class="hl-5">translate</span><span class="hl-1"> </span><span class="hl-4">from</span><span class="hl-1"> </span><span class="hl-2">'@kabeep/node-translate'</span><span class="hl-1">;</span><br><br><span class="hl-6">// 输出源词的例句</span><br><span class="hl-0">translate</span><span class="hl-1">(</span><span class="hl-2">'example'</span><span class="hl-1">, { </span><span class="hl-5">to:</span><span class="hl-1"> </span><span class="hl-2">'zh'</span><span class="hl-1"> }).</span><span class="hl-0">then</span><span class="hl-1">(</span><span class="hl-5">res</span><span class="hl-1"> </span><span class="hl-3">=&gt;</span><span class="hl-1"> {</span><br><span class="hl-1">    </span><span class="hl-6">// =&gt; [</span><br><span class="hl-1">    </span><span class="hl-6">//     "it is vitally important that parents should set an [example]",</span><br><span class="hl-1">    </span><span class="hl-6">//     "she followed her brother's [example] and deserted her family",</span><br><span class="hl-1">    </span><span class="hl-6">//     "it's a good [example] of how European action can produce results",</span><br><span class="hl-1">    </span><span class="hl-6">// ]</span><br><span class="hl-1">    </span><span class="hl-5">console</span><span class="hl-1">.</span><span class="hl-0">log</span><span class="hl-1">(</span><span class="hl-5">res</span><span class="hl-1">.</span><span class="hl-5">from</span><span class="hl-1">.</span><span class="hl-5">sentences</span><span class="hl-1">);</span><br><span class="hl-1">});</span>
+</code><button type="button">Copy</button></pre>
+
+<a id="md:译本多义性" class="tsd-anchor"></a><h4 class="tsd-anchor-link">译本多义性<a href="#md:译本多义性" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><p><a href="../media/polysemy.ts">查看用例</a></p>
+<pre><code class="javascript"><span class="hl-4">import</span><span class="hl-1"> </span><span class="hl-5">translate</span><span class="hl-1"> </span><span class="hl-4">from</span><span class="hl-1"> </span><span class="hl-2">'@kabeep/node-translate'</span><span class="hl-1">;</span><br><br><span class="hl-6">// 输出译文的多义信息</span><br><span class="hl-0">translate</span><span class="hl-1">(</span><span class="hl-2">'例子'</span><span class="hl-1">, { </span><span class="hl-5">to:</span><span class="hl-1"> </span><span class="hl-2">'en'</span><span class="hl-1"> }).</span><span class="hl-0">then</span><span class="hl-1">(</span><span class="hl-5">res</span><span class="hl-1"> </span><span class="hl-3">=&gt;</span><span class="hl-1"> {</span><br><span class="hl-1">    </span><span class="hl-6">// =&gt; [{</span><br><span class="hl-1">    </span><span class="hl-6">//     label: 'noun',</span><br><span class="hl-1">    </span><span class="hl-6">//     children: [</span><br><span class="hl-1">    </span><span class="hl-6">//         'example',</span><br><span class="hl-1">    </span><span class="hl-6">//         'case',</span><br><span class="hl-1">    </span><span class="hl-6">//         'instance',</span><br><span class="hl-1">    </span><span class="hl-6">//     ],</span><br><span class="hl-1">    </span><span class="hl-6">// }]</span><br><span class="hl-1">    </span><span class="hl-5">console</span><span class="hl-1">.</span><span class="hl-0">log</span><span class="hl-1">(</span><span class="hl-5">res</span><span class="hl-1">.</span><span class="hl-5">to</span><span class="hl-1">.</span><span class="hl-5">polysemy</span><span class="hl-1">);</span><br><span class="hl-1">});</span>
+</code><button type="button">Copy</button></pre>
+
+<a id="md:源文本建议" class="tsd-anchor"></a><h4 class="tsd-anchor-link">源文本建议<a href="#md:源文本建议" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><p><a href="../media/did-you-mean.ts">查看用例</a></p>
+<pre><code class="javascript"><span class="hl-4">import</span><span class="hl-1"> </span><span class="hl-5">translate</span><span class="hl-1"> </span><span class="hl-4">from</span><span class="hl-1"> </span><span class="hl-2">'@kabeep/node-translate'</span><span class="hl-1">;</span><br><br><span class="hl-6">// 自动检测并使用建议的正确源文本</span><br><span class="hl-0">translate</span><span class="hl-1">(</span><span class="hl-2">'Thunk you'</span><span class="hl-1">, { </span><span class="hl-5">from:</span><span class="hl-1"> </span><span class="hl-2">'en'</span><span class="hl-1">, </span><span class="hl-5">to:</span><span class="hl-1"> </span><span class="hl-2">'zh'</span><span class="hl-1"> }).</span><span class="hl-0">then</span><span class="hl-1">(</span><span class="hl-5">res</span><span class="hl-1"> </span><span class="hl-3">=&gt;</span><span class="hl-1"> {</span><br><span class="hl-1">    </span><span class="hl-6">// =&gt; 谢谢你</span><br><span class="hl-1">    </span><span class="hl-5">console</span><span class="hl-1">.</span><span class="hl-0">log</span><span class="hl-1">(</span><span class="hl-5">res</span><span class="hl-1">.</span><span class="hl-5">to</span><span class="hl-1">.</span><span class="hl-5">text</span><span class="hl-1">.</span><span class="hl-5">value</span><span class="hl-1">);</span><br><span class="hl-1">    </span><span class="hl-6">// =&gt; true</span><br><span class="hl-1">    </span><span class="hl-5">console</span><span class="hl-1">.</span><span class="hl-0">log</span><span class="hl-1">(</span><span class="hl-5">res</span><span class="hl-1">.</span><span class="hl-5">from</span><span class="hl-1">.</span><span class="hl-5">text</span><span class="hl-1">.</span><span class="hl-5">didYouMean</span><span class="hl-1">);</span><br><span class="hl-1">});</span>
+</code><button type="button">Copy</button></pre>
+
+<a id="md:自动修正源文本" class="tsd-anchor"></a><h4 class="tsd-anchor-link">自动修正源文本<a href="#md:自动修正源文本" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><p><a href="../media/autocorrected.ts">查看用例</a></p>
+<pre><code class="javascript"><span class="hl-4">import</span><span class="hl-1"> </span><span class="hl-5">translate</span><span class="hl-1"> </span><span class="hl-4">from</span><span class="hl-1"> </span><span class="hl-2">'@kabeep/node-translate'</span><span class="hl-1">;</span><br><br><span class="hl-6">// 自动纠正源文本中的拼写错误</span><br><span class="hl-0">translate</span><span class="hl-1">(</span><span class="hl-2">'Thnak you'</span><span class="hl-1">, { </span><span class="hl-5">from:</span><span class="hl-1"> </span><span class="hl-2">'en'</span><span class="hl-1">, </span><span class="hl-5">to:</span><span class="hl-1"> </span><span class="hl-2">'zh'</span><span class="hl-1"> }).</span><span class="hl-0">then</span><span class="hl-1">(</span><span class="hl-5">res</span><span class="hl-1"> </span><span class="hl-3">=&gt;</span><span class="hl-1"> {</span><br><span class="hl-1">    </span><span class="hl-6">// =&gt; 谢谢</span><br><span class="hl-1">    </span><span class="hl-5">console</span><span class="hl-1">.</span><span class="hl-0">log</span><span class="hl-1">(</span><span class="hl-5">res</span><span class="hl-1">.</span><span class="hl-5">to</span><span class="hl-1">.</span><span class="hl-5">text</span><span class="hl-1">.</span><span class="hl-5">value</span><span class="hl-1">);</span><br><span class="hl-1">    </span><span class="hl-6">// =&gt; true</span><br><span class="hl-1">    </span><span class="hl-5">console</span><span class="hl-1">.</span><span class="hl-0">log</span><span class="hl-1">(</span><span class="hl-5">res</span><span class="hl-1">.</span><span class="hl-5">from</span><span class="hl-1">.</span><span class="hl-5">text</span><span class="hl-1">.</span><span class="hl-5">autoCorrected</span><span class="hl-1">);</span><br><span class="hl-1">});</span>
+</code><button type="button">Copy</button></pre>
+
+<a id="md:自动修正源语言代码" class="tsd-anchor"></a><h4 class="tsd-anchor-link">自动修正源语言代码<a href="#md:自动修正源语言代码" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><p><a href="../media/did-you-mean.ts">查看用例</a></p>
+<pre><code class="javascript"><span class="hl-4">import</span><span class="hl-1"> </span><span class="hl-5">translate</span><span class="hl-1"> </span><span class="hl-4">from</span><span class="hl-1"> </span><span class="hl-2">'@kabeep/node-translate'</span><span class="hl-1">;</span><br><br><span class="hl-6">// 自动检测并使用建议的正确源语言代码</span><br><span class="hl-0">translate</span><span class="hl-1">(</span><span class="hl-2">'example'</span><span class="hl-1">, { </span><span class="hl-5">from:</span><span class="hl-1"> </span><span class="hl-2">'zh'</span><span class="hl-1">, </span><span class="hl-5">to:</span><span class="hl-1"> </span><span class="hl-2">'en'</span><span class="hl-1"> }).</span><span class="hl-0">then</span><span class="hl-1">(</span><span class="hl-5">res</span><span class="hl-1"> </span><span class="hl-3">=&gt;</span><span class="hl-1"> {</span><br><span class="hl-1">    </span><span class="hl-6">// =&gt; en</span><br><span class="hl-1">    </span><span class="hl-5">console</span><span class="hl-1">.</span><span class="hl-0">log</span><span class="hl-1">(</span><span class="hl-5">res</span><span class="hl-1">.</span><span class="hl-5">from</span><span class="hl-1">.</span><span class="hl-5">language</span><span class="hl-1">.</span><span class="hl-5">iso</span><span class="hl-1">);</span><br><span class="hl-1">    </span><span class="hl-6">// =&gt; true</span><br><span class="hl-1">    </span><span class="hl-5">console</span><span class="hl-1">.</span><span class="hl-0">log</span><span class="hl-1">(</span><span class="hl-5">res</span><span class="hl-1">.</span><span class="hl-5">from</span><span class="hl-1">.</span><span class="hl-5">language</span><span class="hl-1">.</span><span class="hl-5">didYouMean</span><span class="hl-1">);</span><br><span class="hl-1">});</span><br><br><span class="hl-6">// 自动检测并使用建议的正确源文本</span><br><span class="hl-0">translate</span><span class="hl-1">(</span><span class="hl-2">'Thunk you'</span><span class="hl-1">, { </span><span class="hl-5">from:</span><span class="hl-1"> </span><span class="hl-2">'en'</span><span class="hl-1">, </span><span class="hl-5">to:</span><span class="hl-1"> </span><span class="hl-2">'zh'</span><span class="hl-1"> }).</span><span class="hl-0">then</span><span class="hl-1">(</span><span class="hl-5">res</span><span class="hl-1"> </span><span class="hl-3">=&gt;</span><span class="hl-1"> {</span><br><span class="hl-1">    </span><span class="hl-6">// =&gt; 谢谢你</span><br><span class="hl-1">    </span><span class="hl-5">console</span><span class="hl-1">.</span><span class="hl-0">log</span><span class="hl-1">(</span><span class="hl-5">res</span><span class="hl-1">.</span><span class="hl-5">to</span><span class="hl-1">.</span><span class="hl-5">text</span><span class="hl-1">.</span><span class="hl-5">value</span><span class="hl-1">);</span><br><span class="hl-1">    </span><span class="hl-6">// =&gt; true</span><br><span class="hl-1">    </span><span class="hl-5">console</span><span class="hl-1">.</span><span class="hl-0">log</span><span class="hl-1">(</span><span class="hl-5">res</span><span class="hl-1">.</span><span class="hl-5">from</span><span class="hl-1">.</span><span class="hl-5">text</span><span class="hl-1">.</span><span class="hl-5">didYouMean</span><span class="hl-1">);</span><br><span class="hl-1">});</span>
+</code><button type="button">Copy</button></pre>
+
+<a id="md:网络异常重试" class="tsd-anchor"></a><h4 class="tsd-anchor-link">网络异常重试<a href="#md:网络异常重试" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><p><a href="../media/retry.ts">查看用例</a></p>
+<pre><code class="javascript"><span class="hl-4">import</span><span class="hl-1"> </span><span class="hl-5">translate</span><span class="hl-1"> </span><span class="hl-4">from</span><span class="hl-1"> </span><span class="hl-2">'@kabeep/node-translate'</span><span class="hl-1">;</span><br><br><span class="hl-6">// 在翻译请求失败时进行重试尝试（此时最多三次请求）</span><br><span class="hl-0">translate</span><span class="hl-1">(</span><span class="hl-2">'例子'</span><span class="hl-1">, { </span><span class="hl-5">to:</span><span class="hl-1"> </span><span class="hl-2">'en'</span><span class="hl-1">, </span><span class="hl-5">retry:</span><span class="hl-1"> </span><span class="hl-7">2</span><span class="hl-1">, </span><span class="hl-5">timeout:</span><span class="hl-1"> </span><span class="hl-7">100</span><span class="hl-1"> }).</span><span class="hl-0">catch</span><span class="hl-1">((</span><span class="hl-5">err</span><span class="hl-1">) </span><span class="hl-3">=&gt;</span><span class="hl-1"> {</span><br><span class="hl-1">    </span><span class="hl-6">// =&gt; ETIMEDOUT - 达到了超时限制</span><br><span class="hl-1">    </span><span class="hl-6">// =&gt; ECONNRESET - 连接被强制关闭</span><br><span class="hl-1">    </span><span class="hl-6">// =&gt; EADDRINUSE - 无法绑定到任何空闲端口</span><br><span class="hl-1">    </span><span class="hl-6">// =&gt; ECONNREFUSED - 服务器拒绝了连接</span><br><span class="hl-1">    </span><span class="hl-6">// =&gt; EPIPE - 正在写入的流的远程端已关闭</span><br><span class="hl-1">    </span><span class="hl-6">// =&gt; ENOTFOUND - 无法将主机名解析为 IP 地址</span><br><span class="hl-1">    </span><span class="hl-6">// =&gt; ENETUNREACH - 没有网络连接</span><br><span class="hl-1">    </span><span class="hl-6">// =&gt; EAI_AGAIN - DNS 查询超时</span><br><span class="hl-1">    </span><span class="hl-6">// =&gt; EPARSE - 意料外的响应数据</span><br><span class="hl-1">    </span><span class="hl-6">// =&gt; EVALIDATION - 非法语言代码</span><br><span class="hl-1">    </span><span class="hl-5">console</span><span class="hl-1">.</span><span class="hl-0">log</span><span class="hl-1">(</span><span class="hl-5">err</span><span class="hl-1">.</span><span class="hl-5">message</span><span class="hl-1">);</span><br><span class="hl-1">});</span>
+</code><button type="button">Copy</button></pre>
+
+<a id="md:iso-639-1-x" class="tsd-anchor"></a><h4 class="tsd-anchor-link">ISO-639-1-X<a href="#md:iso-639-1-x" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><p><a href="../media/iso.ts">查看用例</a></p>
+<pre><code class="javascript"><span class="hl-4">import</span><span class="hl-1"> { </span><span class="hl-5">iso6391X</span><span class="hl-1">, </span><span class="hl-5">LanguageCode</span><span class="hl-1">, </span><span class="hl-5">LanguageOption</span><span class="hl-1"> } </span><span class="hl-4">from</span><span class="hl-1"> </span><span class="hl-2">'@kabeep/node-translate'</span><span class="hl-1">;</span><br><br><span class="hl-6">// =&gt; en</span><br><span class="hl-5">console</span><span class="hl-1">.</span><span class="hl-0">log</span><span class="hl-1">(</span><span class="hl-5">iso6391X</span><span class="hl-1">.</span><span class="hl-0">getCode</span><span class="hl-1">(</span><span class="hl-2">'english'</span><span class="hl-1">));</span><br><br><span class="hl-6">// =&gt; ['aa', 'ab', ... 199 more items]</span><br><span class="hl-5">console</span><span class="hl-1">.</span><span class="hl-0">log</span><span class="hl-1">(</span><span class="hl-5">iso6391X</span><span class="hl-1">.</span><span class="hl-0">getAllCodes</span><span class="hl-1">());</span><br><br><span class="hl-6">// =&gt; English</span><br><span class="hl-5">console</span><span class="hl-1">.</span><span class="hl-0">log</span><span class="hl-1">(</span><span class="hl-5">iso6391X</span><span class="hl-1">.</span><span class="hl-0">getName</span><span class="hl-1">(</span><span class="hl-2">'en'</span><span class="hl-1">));</span><br><br><span class="hl-6">// =&gt; ['Afar', 'Abkhaz', ... 199 more items]</span><br><span class="hl-5">console</span><span class="hl-1">.</span><span class="hl-0">log</span><span class="hl-1">(</span><span class="hl-5">iso6391X</span><span class="hl-1">.</span><span class="hl-0">getAllNames</span><span class="hl-1">());</span><br><br><span class="hl-6">// =&gt; 中文</span><br><span class="hl-5">console</span><span class="hl-1">.</span><span class="hl-0">log</span><span class="hl-1">(</span><span class="hl-5">iso6391X</span><span class="hl-1">.</span><span class="hl-0">getNativeName</span><span class="hl-1">(</span><span class="hl-2">'zh'</span><span class="hl-1">));</span><br><br><span class="hl-6">// =&gt; ['Afaraf', 'аҧсуа бызшәа', ... 199 more items]</span><br><span class="hl-5">console</span><span class="hl-1">.</span><span class="hl-0">log</span><span class="hl-1">(</span><span class="hl-5">iso6391X</span><span class="hl-1">.</span><span class="hl-0">getAllNativeNames</span><span class="hl-1">());</span><br><br><span class="hl-6">// =&gt; [</span><br><span class="hl-6">//   { code: 'en', name: 'English', nativeName: 'English' },</span><br><span class="hl-6">//   { code: 'zh', name: 'Chinese', nativeName: '中文' },</span><br><span class="hl-6">//   ... 6 more items</span><br><span class="hl-6">// ]</span><br><span class="hl-5">console</span><span class="hl-1">.</span><span class="hl-0">log</span><span class="hl-1">(</span><span class="hl-5">iso6391X</span><span class="hl-1">.</span><span class="hl-0">getAllDetections</span><span class="hl-1">());</span><br><br><span class="hl-6">// =&gt; [</span><br><span class="hl-6">//   { code: 'en', name: 'English', nativeName: 'English' },</span><br><span class="hl-6">//   { code: 'zh', name: 'Chinese', nativeName: '中文' },</span><br><span class="hl-6">// ]</span><br><span class="hl-5">console</span><span class="hl-1">.</span><span class="hl-0">log</span><span class="hl-1">(</span><span class="hl-5">iso6391X</span><span class="hl-1">.</span><span class="hl-0">getLanguages</span><span class="hl-1">([</span><span class="hl-2">'en'</span><span class="hl-1">, </span><span class="hl-2">'zh'</span><span class="hl-1">]));</span><br><br><span class="hl-6">// =&gt; true</span><br><span class="hl-5">console</span><span class="hl-1">.</span><span class="hl-0">log</span><span class="hl-1">(</span><span class="hl-5">iso6391X</span><span class="hl-1">.</span><span class="hl-0">validate</span><span class="hl-1">(</span><span class="hl-2">'en'</span><span class="hl-1">));</span><br><span class="hl-6">// =&gt; false</span><br><span class="hl-5">console</span><span class="hl-1">.</span><span class="hl-0">log</span><span class="hl-1">(</span><span class="hl-5">iso6391X</span><span class="hl-1">.</span><span class="hl-0">validate</span><span class="hl-1">(</span><span class="hl-2">'english'</span><span class="hl-1">));</span>
+</code><button type="button">Copy</button></pre>
+
+<a id="md:🔗-关联库" class="tsd-anchor"></a><h2 class="tsd-anchor-link">🔗 关联库<a href="#md:🔗-关联库" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2><ul>
+<li><a href="https://github.com/matheuss/google-translate-api" target="_blank" class="external">google-translate-api</a> - A free and unlimited API for Google
+Translate 💵🚫</li>
+<li><a href="https://github.com/iamtraction/google-translate" target="_blank" class="external">google-translate</a> - 🈯 A Node.JS library to consume Google Translate
+API for free.</li>
+</ul>
+<a id="md:🤝-贡献" class="tsd-anchor"></a><h2 class="tsd-anchor-link">🤝 贡献<a href="#md:🤝-贡献" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2><p>欢迎通过 Pull Requests 或 <a href="https://github.com/kabeep/node-translate/issues" target="_blank" class="external">Issues</a> 来贡献你的想法和代码。</p>
+<a id="md:📄-许可" class="tsd-anchor"></a><h2 class="tsd-anchor-link">📄 许可<a href="#md:📄-许可" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2><p>本项目采用 MIT 许可证。详情请见 <a href="../media/LICENSE">LICENSE</a> 文件。</p>
+</div></div><div class="col-sidebar"><div class="page-menu"><div class="tsd-navigation settings"><details class="tsd-accordion"><summary class="tsd-accordion-summary"><h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>Settings</h3></summary><div class="tsd-accordion-details"><div class="tsd-filter-visibility"><span class="settings-label">Member Visibility</span><ul id="tsd-filter-options"><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-protected" name="protected"><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Protected</span></label></li><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-inherited" name="inherited" checked=""><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Inherited</span></label></li><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-external" name="external"><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>External</span></label></li></ul></div><div class="tsd-theme-toggle"><label class="settings-label" for="tsd-theme">Theme</label><select id="tsd-theme"><option value="os">OS</option><option value="light">Light</option><option value="dark">Dark</option></select></div></div></details></div><details open="" class="tsd-accordion tsd-page-navigation"><summary class="tsd-accordion-summary"><h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>On This Page</h3></summary><div class="tsd-accordion-details"><a href="#md:📖-简介"><span>📖 简介</span></a><ul><li><ul><li><a href="#md:什么是新的？"><span>什么是新的？</span></a></li></ul></li></ul><a href="#md:⚙️-安装"><span>⚙️ 安装</span></a><a href="#md:🚀-使用"><span>🚀 使用</span></a><ul><li><ul><li><a href="#md:函数-translatetext-options"><span>函数: translate(text, options)</span></a></li><li><a href="#md:返回-promise"><span>返回: <wbr>Promise&lt;<wbr>Translation<wbr>Option&gt;</span></a></li><li><a href="#md:函数-getnamecode"><span>函数: get<wbr>Name(code)</span></a></li><li><a href="#md:返回-string"><span>返回: string</span></a></li><li><a href="#md:函数-getallnames"><span>函数: get<wbr>All<wbr>Names()</span></a></li><li><a href="#md:返回-string-1"><span>返回: string[]</span></a></li><li><a href="#md:函数-getnativenamecode"><span>函数: get<wbr>Native<wbr>Name(code)</span></a></li><li><a href="#md:返回-string-2"><span>返回: string</span></a></li><li><a href="#md:函数-getallnativenames"><span>函数: get<wbr>All<wbr>Native<wbr>Names()</span></a></li><li><a href="#md:返回-string-3"><span>返回: string[]</span></a></li><li><a href="#md:函数-getcodename"><span>函数: get<wbr>Code(name)</span></a></li><li><a href="#md:返回-languagecode"><span>返回: <wbr>Language<wbr>Code</span></a></li><li><a href="#md:函数-getallcodes"><span>函数: get<wbr>All<wbr>Codes()</span></a></li><li><a href="#md:返回-languagecode-1"><span>返回: <wbr>Language<wbr>Code[]</span></a></li><li><a href="#md:函数-getlanguagescodes"><span>函数: get<wbr>Languages(codes)</span></a></li><li><a href="#md:返回-languageoption"><span>返回: <wbr>Language<wbr>Option[]</span></a></li><li><a href="#md:函数-getalldetections"><span>函数: get<wbr>All<wbr>Detections()</span></a></li><li><a href="#md:返回-languagecode-2"><span>返回: <wbr>Language<wbr>Code[]</span></a></li></ul></li></ul><a href="#md:🪄-例子"><span>🪄 例子</span></a><ul><li><ul><li><a href="#md:使用语言代码"><span>使用语言代码</span></a></li><li><a href="#md:使用语言名和大小写修正"><span>使用语言名和大小写修正</span></a></li><li><a href="#md:自适应翻译"><span>自适应翻译</span></a></li><li><a href="#md:源文本与译本音标"><span>源文本与译本音标</span></a></li><li><a href="#md:源文本同、近义词"><span>源文本同、近义词</span></a></li><li><a href="#md:源文本例句"><span>源文本例句</span></a></li><li><a href="#md:译本多义性"><span>译本多义性</span></a></li><li><a href="#md:源文本建议"><span>源文本建议</span></a></li><li><a href="#md:自动修正源文本"><span>自动修正源文本</span></a></li><li><a href="#md:自动修正源语言代码"><span>自动修正源语言代码</span></a></li><li><a href="#md:网络异常重试"><span>网络异常重试</span></a></li><li><a href="#md:iso-639-1-x"><span>ISO-<wbr>639-<wbr>1-<wbr>X</span></a></li></ul></li></ul><a href="#md:🔗-关联库"><span>🔗 关联库</span></a><a href="#md:🤝-贡献"><span>🤝 贡献</span></a><a href="#md:📄-许可"><span>📄 许可</span></a></div></details></div><div class="site-menu"><nav id="tsd-sidebar-links" class="tsd-navigation"><a href="https://kabeep.github.io/node-translate/" class="tsd-nav-link">Docs</a><a href="https://github.com/kabeep/node-translate" class="tsd-nav-link">GitHub</a><a href="https://www.npmjs.com/package/@kabeep/node-translate" class="tsd-nav-link">NPM</a></nav><nav class="tsd-navigation"><a href="../modules.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="../assets/icons.svg#icon-1"></use></svg><span>@kabeep/node-translate</span></a><ul class="tsd-small-nested-navigation" id="tsd-nav-container" data-base=".."><li>Loading...</li></ul></nav></div></div></div><footer><p class="tsd-generator">Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p></footer><div class="overlay"></div><script>
+          try {
+            const generateLinkElement = document.querySelector(".tsd-generator a");
+            const link = document.createElement("a");
+            Object.assign(link, {
+              href: "https://github.com/dmnsgn/typedoc-material-theme",
+              target: "_blank",
+              rel: "noreferrer",
+              innerText: "typedoc-material-theme."
+            });
+            generateLinkElement.insertAdjacentElement("afterend", link);
+            generateLinkElement.insertAdjacentText("afterend", " with ");
+          } catch (error) {
+
+          }
+        </script>
+</body></html>
