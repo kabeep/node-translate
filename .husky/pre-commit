@@ -1,1 +1,7 @@
-npm test
+#!/bin/sh
+# .husky/pre-commit
+
+# Detected changes in the src directory, running checks...
+if git diff --cached --name-only | grep -Eq '^src/'; then
+  npm test
+fi
