@@ -18,7 +18,7 @@ export default {
         'typedoc-plugin-rename-documents',
         'typedoc-plugin-version-header',
     ],
-    themeColor: '#ffec99',
+    themeColor: '#cb9820',
     renameDocuments: {
         './README.zh-CN.md': '简体中文',
     },
