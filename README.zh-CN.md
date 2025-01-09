@@ -1,6 +1,6 @@
 <div align="center">
 
-<img width="814" src="docs/images/node-translate-logo.png" alt="logo">
+<img width="630" src="assets/node-translate-logo.png" alt="logo">
 
 一个强大、安全且功能丰富的 API，通过 Google 翻译。
 

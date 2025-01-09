@@ -1,10 +1,8 @@
 <div align="center">
 
-<img width="814" src="docs/images/node-translate-logo.png" alt="logo">
+<img width="630" src="assets/node-translate-logo.png" alt="logo">
 
 A powerful, secure and feature-rich api via Google Translation.
-
----
 
 [![NodeJS](https://img.shields.io/node/v/%40kabeep%2Fnode-translate?color=lightseagreen)](https://nodejs.org/docs/latest/api/)
 [![License](https://img.shields.io/github/license/kabeep/node-translate?color=slateblue)](LICENSE)
