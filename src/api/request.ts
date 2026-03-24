@@ -1,5 +1,7 @@
+import process from 'node:process';
 import querystring, { type ParsedUrlQueryInput } from 'node:querystring';
 import got, { type OptionsInit, type RequestError, type Response } from 'got';
+import { HttpsProxyAgent } from 'hpagent';
 import { mutable } from '../helper/index.js';
 import type { RequestParameters, ResponseBody, ResponseErrorCodes } from '../shared/index.js';
 
@@ -72,6 +74,16 @@ async function request({
         requestOptions.method = 'post';
         // Set request body for POST method
         requestOptions.body = new URLSearchParams({ q: text }).toString();
+    }
+
+    const proxyUrl = process.env.https_proxy ?? process.env.http_proxy ?? process.env.all_proxy;
+    if (proxyUrl) {
+        requestOptions.agent = {
+            https: new HttpsProxyAgent({
+                keepAlive: false,
+                proxy: proxyUrl,
+            }),
+        };
     }
 
     // Request translation from Google Translate.
