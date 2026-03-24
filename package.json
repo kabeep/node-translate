@@ -5,9 +5,7 @@
     "description": "A powerful, secure and feature-rich api via Google Translation.",
     "main": "./dist/index.js",
     "types": "./dist/index.d.ts",
-    "files": [
-        "dist"
-    ],
+    "files": ["dist"],
     "scripts": {
         "docs": "npm run build && typedoc",
         "lint": "xo src/**/*.ts --fix",
@@ -22,7 +20,7 @@
     "devDependencies": {
         "@types/lodash.has": "^4.5.9",
         "@types/node": "^22.2.0",
-        "@vitest/coverage-istanbul": "^1.5.1",
+        "@vitest/coverage-istanbul": "^3.2.4",
         "husky": "^9.0.11",
         "ts-node": "^10.9.2",
         "tsup": "^8.0.2",
@@ -36,7 +34,7 @@
         "typedoc-plugin-replace-text": "~4.0.0",
         "typedoc-plugin-version-header": "^1.0.0",
         "typescript": "^5.4.5",
-        "vitest": "^1.5.1",
+        "vitest": "^3.2.4",
         "xo": "^0.58.0"
     },
     "dependencies": {
