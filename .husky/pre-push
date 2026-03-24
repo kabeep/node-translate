@@ -1,7 +1,10 @@
 #!/bin/sh
 # .husky/pre-push
 
-# Detected changes in the src or bin directory, running checks...
-if git diff --cached --name-only | grep -Eq '^src/'; then
+. "$(dirname "$0")/_/husky.sh"
+
+# Detected changes in the src directory, running checks...
+if git diff --name-only @{u}..HEAD | grep -Eq '^(src)/'; then
+  echo "Detected changes, building..."
   npm run build
 fi
