@@ -2,12 +2,12 @@ import process from 'node:process';
 import querystring, { type ParsedUrlQueryInput } from 'node:querystring';
 import got, { type OptionsInit, type RequestError, type Response } from 'got';
 import { HttpsProxyAgent } from 'hpagent';
-import { mutable } from '../helper/index.js';
+import { mutable } from '../helper';
 import type {
     RequestParameters,
     ResponseBody,
     ResponseErrorCodes,
-} from '../shared/index.js';
+} from '../shared';
 
 /**
  * Represents the options for translation.

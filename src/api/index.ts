@@ -1,1 +1,1 @@
-export { default as request, type RequestOptions } from './request.js';
+export { default as request, type RequestOptions } from './request';

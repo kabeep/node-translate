@@ -6,7 +6,7 @@ import {
     type AdditionalName,
     adaptiveCodes,
     additionalCodes,
-} from '../shared/index.js';
+} from '../shared';
 
 /**
  * Represents a utility class for working with ISO 639-1 language codes and additional custom codes.

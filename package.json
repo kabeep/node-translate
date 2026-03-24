@@ -5,10 +5,10 @@
     "description": "A powerful, secure and feature-rich api via Google Translation.",
     "main": "./dist/index.js",
     "types": "./dist/index.d.ts",
+    "source": "./src/index.ts",
     "files": ["dist"],
     "scripts": {
         "prepare": "husky",
-        "docs": "npm run build && typedoc",
         "lint": "biome check src",
         "lint:write": "biome check src --write",
         "lint:staged": "biome check src --write --staged",
@@ -19,7 +19,9 @@
         "coverage": "vitest run --coverage",
         "watch": "tsup --watch",
         "watch:test": "vitest",
-        "build": "tsup --dts --treeshake smallest"
+        "build": "tsup --dts --treeshake smallest",
+        "predocs": "npm run build",
+        "docs": "typedoc"
     },
     "devDependencies": {
         "@biomejs/biome": "^2.4.8",
@@ -49,10 +51,13 @@
         "lodash.has": "^4.5.2",
         "os-locale": "^6.0.2"
     },
-    "author": "Zhang Zixin (kabeep)",
+    "author": {
+        "name": "Jason Zhang",
+        "email": "zzx2067@outlook.com"
+    },
     "homepage": "https://kabeep.github.io/node-translate",
     "repository": "git@github.com:kabeep/node-translate.git",
-    "bugs": "https://github.com/kabeep/node-translate/issue",
+    "bugs": "https://github.com/kabeep/node-translate/issues",
     "keywords": [
         "nodejs",
         "translate",
@@ -63,7 +68,7 @@
         "node translate api"
     ],
     "engines": {
-        "node": ">=16"
+        "node": "18.18.x || >=18.20.0"
     },
     "license": "MIT"
 }

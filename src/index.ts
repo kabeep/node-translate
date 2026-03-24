@@ -8,9 +8,9 @@ export type {
     TranslationOptionFromText,
     TranslationOptionTo,
     TranslationOptionToText,
-} from './core/index.js';
-export { iso6391X, translate as default } from './core/index.js';
+} from './core';
+export { iso6391X, translate as default } from './core';
 export type {
     ResponseBody as TranslateRawBody,
     TranslateErrorCodes,
-} from './shared/index.js';
+} from './shared';

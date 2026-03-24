@@ -1,5 +1,5 @@
-import { mutable } from '../helper/index.js';
-import type { ResponseBody } from '../shared/index.js';
+import { mutable } from '../helper';
+import type { ResponseBody } from '../shared';
 
 export interface TranslationOptionFromLanguage {
     /** Indicates whether there is a language suggestion */

@@ -1,6 +1,6 @@
-import { iso6391X } from '../core/index.js';
-import validate from '../core/validate.js';
-import getLocale from './get-locale.js';
+import { iso6391X } from '../core';
+import validate from '../core/validate';
+import getLocale from './get-locale';
 
 function getCode(codeOrLang?: string, adaptive = false) {
     if (!codeOrLang || codeOrLang === 'auto')

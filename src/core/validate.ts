@@ -1,4 +1,4 @@
-import iso6391X from './iso-639-1-x.js';
+import iso6391X from './iso-639-1-x';
 
 /**
  * Validates whether the provided language code is valid.

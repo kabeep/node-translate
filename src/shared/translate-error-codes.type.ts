@@ -1,4 +1,4 @@
-import type { ResponseErrorCodes } from './response-error-codes.type.js';
+import type { ResponseErrorCodes } from './response-error-codes.type';
 
 export type TranslateErrorCodes =
     | 'EPARSE' // Unexpected API response data

@@ -2,7 +2,7 @@ export {
     default as iso6391X,
     type LanguageCode,
     type LanguageOption,
-} from './iso-639-1-x.js';
+} from './iso-639-1-x';
 export {
     default as parse,
     type TranslationOption,
@@ -11,6 +11,6 @@ export {
     type TranslationOptionFromText,
     type TranslationOptionTo,
     type TranslationOptionToText,
-} from './parse.js';
-export { default as translate, type TranslateOptions } from './translate.js';
-export { default as validate } from './validate.js';
+} from './parse';
+export { default as translate, type TranslateOptions } from './translate';
+export { default as validate } from './validate';

@@ -1,6 +1,6 @@
-import { type RequestOptions, request } from '../api/index.js';
-import { getCode } from '../helper/index.js';
-import parse from './parse.js';
+import { type RequestOptions, request } from '../api';
+import { getCode } from '../helper';
+import parse from './parse';
 
 /**
  * Represents options for translating text.
