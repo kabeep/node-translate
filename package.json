@@ -55,7 +55,14 @@
         "email": "zzx2067@outlook.com"
     },
     "homepage": "https://kabeep.github.io/node-translate",
-    "repository": "git@github.com:kabeep/node-translate.git",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/kabeep/node-translate.git"
+    },
+    "publishConfig": {
+        "access": "public",
+        "registry": "https://registry.npmjs.org/"
+    },
     "bugs": "https://github.com/kabeep/node-translate/issues",
     "keywords": [
         "nodejs",
