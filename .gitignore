@@ -4,9 +4,13 @@ dist/
 # Cache
 .cache
 
-# Lock Files
+│ # Lock Files
 package-lock.json
 yarn.lock
+pnpm-lock.yaml
+
+# pnpm Workspace
+pnpm-workspace.yaml
 
 # VisualStudioCode template
 .vscode/*
