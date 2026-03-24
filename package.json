@@ -27,6 +27,7 @@
         "@types/node": "^22.2.0",
         "@vitest/coverage-istanbul": "^3.2.4",
         "husky": "^9.0.11",
+        "lint-staged": "^16.4.0",
         "ts-node": "^10.9.2",
         "tsup": "^8.0.2",
         "typedoc": "~0.26.11",

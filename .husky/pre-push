@@ -1,0 +1,7 @@
+#!/bin/sh
+# .husky/pre-push
+
+# Detected changes in the src or bin directory, running checks...
+if git diff --cached --name-only | grep -Eq '^src/'; then
+  npm run build
+fi
