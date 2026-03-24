@@ -7,17 +7,22 @@
     "types": "./dist/index.d.ts",
     "files": ["dist"],
     "scripts": {
+        "prepare": "husky",
         "docs": "npm run build && typedoc",
-        "lint": "xo src/**/*.ts --fix",
+        "lint": "biome check src",
+        "lint:write": "biome check src --write",
+        "lint:staged": "biome check src --write --staged",
+        "lint:changed": "biome check src --write --changed",
+        "lint-staged": "lint-staged",
         "pretest": "npm run lint",
         "test": "vitest run",
         "coverage": "vitest run --coverage",
         "watch": "tsup --watch",
         "watch:test": "vitest",
-        "build": "tsup --dts --treeshake smallest",
-        "prepare": "husky"
+        "build": "tsup --dts --treeshake smallest"
     },
     "devDependencies": {
+        "@biomejs/biome": "^2.4.8",
         "@types/lodash.has": "^4.5.9",
         "@types/node": "^22.2.0",
         "@vitest/coverage-istanbul": "^3.2.4",
@@ -34,8 +39,7 @@
         "typedoc-plugin-replace-text": "~4.0.0",
         "typedoc-plugin-version-header": "^1.0.0",
         "typescript": "^5.4.5",
-        "vitest": "^3.2.4",
-        "xo": "^0.58.0"
+        "vitest": "^3.2.4"
     },
     "dependencies": {
         "got": "^13.0.0",

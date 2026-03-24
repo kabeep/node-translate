@@ -1,5 +1,3 @@
-export type { ResponseBody as TranslateRawBody, TranslateErrorCodes } from './shared/index.js';
-
 export type {
     LanguageCode,
     LanguageOption,
@@ -12,3 +10,7 @@ export type {
     TranslationOptionToText,
 } from './core/index.js';
 export { iso6391X, translate as default } from './core/index.js';
+export type {
+    ResponseBody as TranslateRawBody,
+    TranslateErrorCodes,
+} from './shared/index.js';

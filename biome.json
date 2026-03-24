@@ -1,0 +1,66 @@
+{
+    "$schema": "https://biomejs.dev/schemas/2.0.5/schema.json",
+    "vcs": {
+        "enabled": true,
+        "useIgnoreFile": true,
+        "clientKind": "git",
+        "defaultBranch": "master"
+    },
+    "files": {
+        "includes": [
+            "{src,example,test}/**/*.{ts,cts,mts,js,cjs,mjs,json,jsonc}",
+            "*.{ts,js,json,jsonc,mts,cts,mjs,cjs}"
+        ],
+        "ignoreUnknown": true,
+        "maxSize": 1048576
+    },
+    "linter": {
+        "enabled": true,
+        "includes": ["**"],
+        "rules": {
+            "recommended": true,
+            "suspicious": {
+                "noConfusingVoidType": "off",
+                "noAssignInExpressions": "off"
+            }
+        }
+    },
+    "formatter": {
+        "enabled": true,
+        "includes": ["**"],
+        "formatWithErrors": false,
+        "indentStyle": "space",
+        "indentWidth": 4,
+        "lineEnding": "lf",
+        "lineWidth": 80,
+        "attributePosition": "auto",
+        "bracketSpacing": true,
+        "expand": "auto"
+    },
+    "javascript": {
+        "formatter": {
+            "enabled": true,
+            "quoteStyle": "single",
+            "indentStyle": "space",
+            "indentWidth": 4,
+            "lineWidth": 80,
+            "lineEnding": "lf",
+            "jsxQuoteStyle": "double",
+            "trailingCommas": "all",
+            "semicolons": "always",
+            "quoteProperties": "asNeeded",
+            "arrowParentheses": "always",
+            "attributePosition": "auto",
+            "expand": "auto"
+        }
+    },
+    "overrides": [],
+    "assist": {
+        "enabled": true,
+        "actions": {
+            "source": {
+                "organizeImports": "on"
+            }
+        }
+    }
+}

@@ -1,11 +1,12 @@
-import { request, type RequestOptions } from '../api/index.js';
+import { type RequestOptions, request } from '../api/index.js';
 import { getCode } from '../helper/index.js';
 import parse from './parse.js';
 
 /**
  * Represents options for translating text.
  */
-export interface TranslateOptions extends Partial<Omit<RequestOptions, 'text'>> {
+export interface TranslateOptions
+    extends Partial<Omit<RequestOptions, 'text'>> {
     raw?: boolean;
 }
 
@@ -17,13 +18,27 @@ export interface TranslateOptions extends Partial<Omit<RequestOptions, 'text'>> 
  */
 async function translate(
     text: string,
-    { from = 'auto', to = 'auto', timeout, retry, raw: rawEnabled = false, requestOptions }: TranslateOptions = {},
+    {
+        from = 'auto',
+        to = 'auto',
+        timeout,
+        retry,
+        raw: rawEnabled = false,
+        requestOptions,
+    }: TranslateOptions = {},
 ) {
     from = getCode(from);
     to = getCode(to, true);
     text = String(text);
 
-    const response = await request({ from, to, text, timeout, retry, requestOptions });
+    const response = await request({
+        from,
+        to,
+        text,
+        timeout,
+        retry,
+        requestOptions,
+    });
 
     const data = parse(response);
 

@@ -3,7 +3,8 @@ import validate from '../core/validate.js';
 import getLocale from './get-locale.js';
 
 function getCode(codeOrLang?: string, adaptive = false) {
-    if (!codeOrLang || codeOrLang === 'auto') return adaptive ? getLocale() : 'auto';
+    if (!codeOrLang || codeOrLang === 'auto')
+        return adaptive ? getLocale() : 'auto';
 
     codeOrLang = codeOrLang.toLowerCase();
 

@@ -124,7 +124,6 @@ export type ResponseBody = [
     number,
     [string?, string?, number[]?, undefined?, undefined?, boolean?],
     SourceDetection,
-
     /* Word */
     undefined?,
     undefined?,

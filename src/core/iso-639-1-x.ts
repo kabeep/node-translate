@@ -1,11 +1,11 @@
 import iso6391, { type LanguageCode as Iso6391LanguageCode } from 'iso-639-1';
 import has from 'lodash.has';
 import {
-    adaptiveCodes,
     type AdditionalCode,
     type AdditionalCodeOption,
-    additionalCodes,
     type AdditionalName,
+    adaptiveCodes,
+    additionalCodes,
 } from '../shared/index.js';
 
 /**
@@ -34,7 +34,10 @@ class Iso6391X {
      * @returns {string} - The name of the language.
      */
     getName(code: string) {
-        return additionalCodes[code.toLowerCase() as AdditionalCode]?.name ?? iso6391.getName(code);
+        return (
+            additionalCodes[code.toLowerCase() as AdditionalCode]?.name ??
+            iso6391.getName(code)
+        );
     }
 
     /**
@@ -42,7 +45,10 @@ class Iso6391X {
      * @returns {string[]} - An array of language names.
      */
     getAllNames() {
-        return [...iso6391.getAllNames(), ...Object.values(additionalCodes).map((item) => item.name)];
+        return [
+            ...iso6391.getAllNames(),
+            ...Object.values(additionalCodes).map((item) => item.name),
+        ];
     }
 
     /**
@@ -51,7 +57,10 @@ class Iso6391X {
      * @returns {string} - The native name of the language.
      */
     getNativeName(code: string) {
-        return additionalCodes[code.toLowerCase() as AdditionalCode]?.nativeName ?? iso6391.getNativeName(code);
+        return (
+            additionalCodes[code.toLowerCase() as AdditionalCode]?.nativeName ??
+            iso6391.getNativeName(code)
+        );
     }
 
     /**
@@ -59,7 +68,12 @@ class Iso6391X {
      * @returns {string[]} - An array of native language names.
      */
     getAllNativeNames() {
-        return [...iso6391.getAllNativeNames(), ...Object.values(additionalCodes).map((option) => option.nativeName)];
+        return [
+            ...iso6391.getAllNativeNames(),
+            ...Object.values(additionalCodes).map(
+                (option) => option.nativeName,
+            ),
+        ];
     }
 
     /**
@@ -68,10 +82,15 @@ class Iso6391X {
      * @returns {LanguageCode
      */
     getCode(name: string) {
-        const additionalNames = Object.values(additionalCodes).map((option) => option.name.toLowerCase());
-        const matchIndex = additionalNames.indexOf(name.toLowerCase() as AdditionalName);
+        const additionalNames = Object.values(additionalCodes).map((option) =>
+            option.name.toLowerCase(),
+        );
+        const matchIndex = additionalNames.indexOf(
+            name.toLowerCase() as AdditionalName,
+        );
 
-        return (Object.keys(additionalCodes)[matchIndex] ?? iso6391.getCode(name)) as LanguageCode;
+        return (Object.keys(additionalCodes)[matchIndex] ??
+            iso6391.getCode(name)) as LanguageCode;
     }
 
     /**
@@ -79,7 +98,10 @@ class Iso6391X {
      * @returns {LanguageCode[]} - An array of language codes.
      */
     getAllCodes() {
-        return [...iso6391.getAllCodes(), ...Object.keys(additionalCodes)] as LanguageCode[];
+        return [
+            ...iso6391.getAllCodes(),
+            ...Object.keys(additionalCodes),
+        ] as LanguageCode[];
     }
 
     /**
@@ -88,20 +110,28 @@ class Iso6391X {
      * @returns {LanguageOption[]} - An array of language options.
      */
     getLanguages(codes: string[]) {
-        const [googleLanguages, isoCodes] = [[], []] as [LanguageOption[], string[]];
+        const [googleLanguages, isoCodes] = [[], []] as [
+            LanguageOption[],
+            string[],
+        ];
 
         for (const code of codes) {
             if (has(additionalCodes, code.toLowerCase())) {
                 googleLanguages.push({
                     code: code.toLowerCase() as LanguageCode,
-                    ...(additionalCodes as Record<string, AdditionalCodeOption>)[code],
+                    ...(
+                        additionalCodes as Record<string, AdditionalCodeOption>
+                    )[code],
                 });
             } else {
                 isoCodes.push(code);
             }
         }
 
-        return [...iso6391.getLanguages(isoCodes), ...googleLanguages] as LanguageOption[];
+        return [
+            ...iso6391.getLanguages(isoCodes),
+            ...googleLanguages,
+        ] as LanguageOption[];
     }
 
     /**
@@ -119,7 +149,9 @@ class Iso6391X {
      * @returns {boolean} - True if the code is valid, false otherwise.
      */
     validate(code: string) {
-        return iso6391.validate(code) || has(additionalCodes, code.toLowerCase());
+        return (
+            iso6391.validate(code) || has(additionalCodes, code.toLowerCase())
+        );
     }
 }
 

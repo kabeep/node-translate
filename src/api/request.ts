@@ -3,7 +3,11 @@ import querystring, { type ParsedUrlQueryInput } from 'node:querystring';
 import got, { type OptionsInit, type RequestError, type Response } from 'got';
 import { HttpsProxyAgent } from 'hpagent';
 import { mutable } from '../helper/index.js';
-import type { RequestParameters, ResponseBody, ResponseErrorCodes } from '../shared/index.js';
+import type {
+    RequestParameters,
+    ResponseBody,
+    ResponseErrorCodes,
+} from '../shared/index.js';
 
 /**
  * Represents the options for translation.
@@ -53,7 +57,7 @@ async function request({
     });
 
     const getUrl = (url: string, data: RequestParameters) =>
-        `${baseUrl}?${querystring.stringify(data as ParsedUrlQueryInput)}`;
+        `${url}?${querystring.stringify(data as ParsedUrlQueryInput)}`;
 
     // If request URL is greater than 2048 characters, use POST method.
     const isOverflow = getUrl(baseUrl, data).length > 2048;
@@ -78,7 +82,10 @@ async function request({
         options.body = new URLSearchParams({ q: text }).toString();
     }
 
-    const proxyUrl = process.env.https_proxy ?? process.env.http_proxy ?? process.env.all_proxy;
+    const proxyUrl =
+        process.env.https_proxy ??
+        process.env.http_proxy ??
+        process.env.all_proxy;
     if (proxyUrl) {
         options.agent = {
             https: new HttpsProxyAgent({
@@ -91,7 +98,10 @@ async function request({
     // Request translation from Google Translate.
     let response: Response<ResponseBody>;
     try {
-        response = (await got(url, { ...options, ...requestOptions })) as Response<ResponseBody>;
+        response = (await got(url, {
+            ...options,
+            ...requestOptions,
+        })) as Response<ResponseBody>;
     } catch (error: unknown) {
         throw new Error((error as RequestError).code as ResponseErrorCodes);
     }

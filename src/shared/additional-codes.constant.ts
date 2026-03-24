@@ -2,7 +2,8 @@ type AdditionalCodeOptions = typeof additionalCodes;
 export type AdditionalCode = keyof AdditionalCodeOptions;
 export type AdditionalCodeOption = AdditionalCodeOptions[AdditionalCode];
 export type AdditionalName = AdditionalCodeOptions[AdditionalCode]['name'];
-export type AdditionalNativeName = AdditionalCodeOptions[AdditionalCode]['nativeName'];
+export type AdditionalNativeName =
+    AdditionalCodeOptions[AdditionalCode]['nativeName'];
 
 const additionalCodes = {
     bho: {
