@@ -1,6 +1,9 @@
 # Build
 dist/
 
+# Document Directories
+docs/
+
 # Cache
 .cache
 
