@@ -17,13 +17,13 @@ export interface TranslateOptions extends Partial<Omit<RequestOptions, 'text'>> 
  */
 async function translate(
     text: string,
-    { from = 'auto', to = 'auto', timeout, retry, raw: rawEnabled = false }: TranslateOptions = {},
+    { from = 'auto', to = 'auto', timeout, retry, raw: rawEnabled = false, requestOptions }: TranslateOptions = {},
 ) {
     from = getCode(from);
     to = getCode(to, true);
     text = String(text);
 
-    const response = await request({ from, to, text, timeout, retry });
+    const response = await request({ from, to, text, timeout, retry, requestOptions });
 
     const data = parse(response);
 

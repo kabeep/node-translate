@@ -19,6 +19,7 @@ export interface RequestOptions {
     timeout?: number;
     /** Retry attempts for the translation request in case of failure (default: 0) */
     retry?: number;
+    requestOptions?: Partial<OptionsInit>;
 }
 
 /**
@@ -32,6 +33,7 @@ async function request({
     text,
     timeout = 30_000,
     retry = 0,
+    requestOptions = {},
 }: RequestOptions): Promise<ResponseBody> {
     // URL & query string required by Google Translate.
     const baseUrl = 'https://translate.google.com/translate_a/single';
@@ -59,7 +61,7 @@ async function request({
 
     // Append query string to the request URL.
     const url = getUrl(baseUrl, data);
-    const requestOptions = mutable<OptionsInit>({
+    const options = mutable<OptionsInit>({
         method: 'get', // HTTP request method
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8',
@@ -71,14 +73,14 @@ async function request({
 
     if (isOverflow) {
         // Change HTTP method to POST if URL is too long
-        requestOptions.method = 'post';
+        options.method = 'post';
         // Set request body for POST method
-        requestOptions.body = new URLSearchParams({ q: text }).toString();
+        options.body = new URLSearchParams({ q: text }).toString();
     }
 
     const proxyUrl = process.env.https_proxy ?? process.env.http_proxy ?? process.env.all_proxy;
     if (proxyUrl) {
-        requestOptions.agent = {
+        options.agent = {
             https: new HttpsProxyAgent({
                 keepAlive: false,
                 proxy: proxyUrl,
@@ -89,7 +91,7 @@ async function request({
     // Request translation from Google Translate.
     let response: Response<ResponseBody>;
     try {
-        response = (await got(url, requestOptions)) as Response<ResponseBody>;
+        response = (await got(url, { ...options, ...requestOptions })) as Response<ResponseBody>;
     } catch (error: unknown) {
         throw new Error((error as RequestError).code as ResponseErrorCodes);
     }
